@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Report;
+use App\Models\Visit;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -61,5 +62,13 @@ class ReportController extends Controller
     public function destroy(Report $report)
     {
         //
+    }
+    public function getReports()
+    {
+        $visit = Visit::where('id', 1)->value('count');
+
+        $pageName = 'Reports';
+
+        return view('reports', compact('pageName', 'visit'));
     }
 }

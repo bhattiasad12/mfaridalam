@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Presentation;
+use App\Models\Visit;
 use Illuminate\Http\Request;
 
 class PresentationController extends Controller
@@ -61,5 +62,14 @@ class PresentationController extends Controller
     public function destroy(Presentation $presentation)
     {
         //
+    }
+
+    public function getPresentations()
+    {
+        $visit = Visit::where('id', 1)->value('count');
+
+        $pageName = 'Presentations';
+        
+        return view('presentations', compact('pageName', 'visit'));
     }
 }

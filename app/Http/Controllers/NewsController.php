@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\Visit;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -61,5 +62,14 @@ class NewsController extends Controller
     public function destroy(News $news)
     {
         //
+    }
+    
+    public function getNews()
+    {
+        $visit = Visit::where('id', 1)->value('count');
+
+        $pageName = 'News';
+
+        return view('news', compact('pageName', 'visit'));
     }
 }

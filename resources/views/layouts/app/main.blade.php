@@ -9,7 +9,7 @@
             id="megamenu-toggle" type="checkbox">
         @include('layouts.app.topbar')
 
-        @yield('content');
+        @yield('content')
 
         @include('layouts.app.footer')
 

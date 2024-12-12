@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Interview;
+use App\Models\Visit;
 use Illuminate\Http\Request;
 
 class InterviewController extends Controller
@@ -61,5 +62,14 @@ class InterviewController extends Controller
     public function destroy(Interview $interview)
     {
         //
+    }
+
+    public function getInterviews()
+    {
+        $visit = Visit::where('id', 1)->value('count');
+
+        $pageName = 'Interviews';
+
+        return view('interviews', compact('pageName', 'visit'));
     }
 }

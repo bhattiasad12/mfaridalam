@@ -14,6 +14,7 @@ class WelcomeController extends Controller
         $visit = Visit::firstOrCreate([], ['count' => 0]);
 
         $visit->increment('count');
+        $visit = Visit::where('id', 1)->value('count');
 
         $interviews = [
             'https://www.youtube.com/watch?v=28nS80VnxR8',
@@ -24,9 +25,24 @@ class WelcomeController extends Controller
             'https://www.youtube.com/watch?v=_wRaeMcHQ_Y',
         ];
 
-        return view('welcome', [
-            'visit' => $visit->count,
-            'interviews' => $interviews,
-        ]);
+        return view('welcome', compact('visit', 'interviews'));
+    }
+
+    public function getAboutMe()
+    {
+        $visit = Visit::where('id', 1)->value('count');
+
+        $pageName = 'About Me';
+
+        return view('about_me', compact('pageName', 'visit'));
+    }
+
+    public function getContactMe()
+    {
+        $visit = Visit::where('id', 1)->value('count');
+
+        $pageName = 'Contact Me';
+
+        return view('contact_me', compact('pageName', 'visit'));
     }
 }

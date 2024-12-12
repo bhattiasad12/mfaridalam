@@ -1,4 +1,3 @@
-
 <script type="application/json" data-drupal-selector="drupal-settings-json">
   {
       "path": {
@@ -147,24 +146,26 @@
 {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> --}}
 
 <script
-  src="{{ asset('assets/js/js_lyhZIYgdbXHnIDtG9DojmqMk0K0a_GRjBd6hKS0avsEb91b.js?scope=footer&delta=0&language=en&theme=cfa_base&include=eJx9UVtywzAIvFBcX6M_PQODJGyT6FXAdXP74riZTD_qH2bELquFjROCEkpcADtDbF_Uxke96iX-Cw5orXAcVr4oG4HamrjBRmFqUoAyFao2Pt-Z1R5qAZXGObeAedAo3M1_aTljVw65xZvLC72osZsP19vfThCeF9uNQM9439WBSqDkWgsptzr-OgCj4hQjfTtknvjhwbWDoLDDjnygxeWddm09YXYUdMff4Au4da7zCXnjmtp2MI97vs71uvP_rrngTGcEzZxIhtiqIVeSM660bfA8nJzXUvUR3ebjgJnERq5sJ6tcP1eSO6wMNE0UPQbf_fTkSdbuQXt3vTROcdwLYEqQSI0rms_9AMML_V4') }}">
+    src="{{ asset('assets/js/js_lyhZIYgdbXHnIDtG9DojmqMk0K0a_GRjBd6hKS0avsEb91b.js?scope=footer&delta=0&language=en&theme=cfa_base&include=eJx9UVtywzAIvFBcX6M_PQODJGyT6FXAdXP74riZTD_qH2bELquFjROCEkpcADtDbF_Uxke96iX-Cw5orXAcVr4oG4HamrjBRmFqUoAyFao2Pt-Z1R5qAZXGObeAedAo3M1_aTljVw65xZvLC72osZsP19vfThCeF9uNQM9439WBSqDkWgsptzr-OgCj4hQjfTtknvjhwbWDoLDDjnygxeWddm09YXYUdMff4Au4da7zCXnjmtp2MI97vs71uvP_rrngTGcEzZxIhtiqIVeSM660bfA8nJzXUvUR3ebjgJnERq5sJ6tcP1eSO6wMNE0UPQbf_fTkSdbuQXt3vTROcdwLYEqQSI0rms_9AMML_V4') }}">
 </script>
 <script
-  src="{{ asset('assets/js/js_yeWBGOJqMmaSh23u_ml82eMvHSMKp2Y-h8w11GfiCLMcd20.js?scope=footer&delta=3&language=en&theme=cfa_base&include=eJx9UVtywzAIvFBcX6M_PQODJGyT6FXAdXP74riZTD_qH2bELquFjROCEkpcADtDbF_Uxke96iX-Cw5orXAcVr4oG4HamrjBRmFqUoAyFao2Pt-Z1R5qAZXGObeAedAo3M1_aTljVw65xZvLC72osZsP19vfThCeF9uNQM9439WBSqDkWgsptzr-OgCj4hQjfTtknvjhwbWDoLDDjnygxeWddm09YXYUdMff4Au4da7zCXnjmtp2MI97vs71uvP_rrngTGcEzZxIhtiqIVeSM660bfA8nJzXUvUR3ebjgJnERq5sJ6tcP1eSO6wMNE0UPQbf_fTkSdbuQXt3vTROcdwLYEqQSI0rms_9AMML_V4') }}">
+    src="{{ asset('assets/js/js_yeWBGOJqMmaSh23u_ml82eMvHSMKp2Y-h8w11GfiCLMcd20.js?scope=footer&delta=3&language=en&theme=cfa_base&include=eJx9UVtywzAIvFBcX6M_PQODJGyT6FXAdXP74riZTD_qH2bELquFjROCEkpcADtDbF_Uxke96iX-Cw5orXAcVr4oG4HamrjBRmFqUoAyFao2Pt-Z1R5qAZXGObeAedAo3M1_aTljVw65xZvLC72osZsP19vfThCeF9uNQM9439WBSqDkWgsptzr-OgCj4hQjfTtknvjhwbWDoLDDjnygxeWddm09YXYUdMff4Au4da7zCXnjmtp2MI97vs71uvP_rrngTGcEzZxIhtiqIVeSM660bfA8nJzXUvUR3ebjgJnERq5sJ6tcP1eSO6wMNE0UPQbf_fTkSdbuQXt3vTROcdwLYEqQSI0rms_9AMML_V4') }}">
 </script>
 <script
-  src="{{ asset('assets/js/js_Bo-acEKtBUrxB8I00hJLrWRayz9KvzO50t25RMCXE5A58da.js?scope=footer&delta=6&language=en&theme=cfa_base&include=eJx9UVtywzAIvFBcX6M_PQODJGyT6FXAdXP74riZTD_qH2bELquFjROCEkpcADtDbF_Uxke96iX-Cw5orXAcVr4oG4HamrjBRmFqUoAyFao2Pt-Z1R5qAZXGObeAedAo3M1_aTljVw65xZvLC72osZsP19vfThCeF9uNQM9439WBSqDkWgsptzr-OgCj4hQjfTtknvjhwbWDoLDDjnygxeWddm09YXYUdMff4Au4da7zCXnjmtp2MI97vs71uvP_rrngTGcEzZxIhtiqIVeSM660bfA8nJzXUvUR3ebjgJnERq5sJ6tcP1eSO6wMNE0UPQbf_fTkSdbuQXt3vTROcdwLYEqQSI0rms_9AMML_V4') }}">
+    src="{{ asset('assets/js/js_Bo-acEKtBUrxB8I00hJLrWRayz9KvzO50t25RMCXE5A58da.js?scope=footer&delta=6&language=en&theme=cfa_base&include=eJx9UVtywzAIvFBcX6M_PQODJGyT6FXAdXP74riZTD_qH2bELquFjROCEkpcADtDbF_Uxke96iX-Cw5orXAcVr4oG4HamrjBRmFqUoAyFao2Pt-Z1R5qAZXGObeAedAo3M1_aTljVw65xZvLC72osZsP19vfThCeF9uNQM9439WBSqDkWgsptzr-OgCj4hQjfTtknvjhwbWDoLDDjnygxeWddm09YXYUdMff4Au4da7zCXnjmtp2MI97vs71uvP_rrngTGcEzZxIhtiqIVeSM660bfA8nJzXUvUR3ebjgJnERq5sJ6tcP1eSO6wMNE0UPQbf_fTkSdbuQXt3vTROcdwLYEqQSI0rms_9AMML_V4') }}">
 </script>
 <script
-  src="{{ asset('assets/js/js_2uf0c6cXmH3kGcINGkeb8tuIBrXnkRItUYGA4skYpb0f7f8.js?scope=footer&delta=8&language=en&theme=cfa_base&include=eJx9UVtywzAIvFBcX6M_PQODJGyT6FXAdXP74riZTD_qH2bELquFjROCEkpcADtDbF_Uxke96iX-Cw5orXAcVr4oG4HamrjBRmFqUoAyFao2Pt-Z1R5qAZXGObeAedAo3M1_aTljVw65xZvLC72osZsP19vfThCeF9uNQM9439WBSqDkWgsptzr-OgCj4hQjfTtknvjhwbWDoLDDjnygxeWddm09YXYUdMff4Au4da7zCXnjmtp2MI97vs71uvP_rrngTGcEzZxIhtiqIVeSM660bfA8nJzXUvUR3ebjgJnERq5sJ6tcP1eSO6wMNE0UPQbf_fTkSdbuQXt3vTROcdwLYEqQSI0rms_9AMML_V4') }}">
+    src="{{ asset('assets/js/js_2uf0c6cXmH3kGcINGkeb8tuIBrXnkRItUYGA4skYpb0f7f8.js?scope=footer&delta=8&language=en&theme=cfa_base&include=eJx9UVtywzAIvFBcX6M_PQODJGyT6FXAdXP74riZTD_qH2bELquFjROCEkpcADtDbF_Uxke96iX-Cw5orXAcVr4oG4HamrjBRmFqUoAyFao2Pt-Z1R5qAZXGObeAedAo3M1_aTljVw65xZvLC72osZsP19vfThCeF9uNQM9439WBSqDkWgsptzr-OgCj4hQjfTtknvjhwbWDoLDDjnygxeWddm09YXYUdMff4Au4da7zCXnjmtp2MI97vs71uvP_rrngTGcEzZxIhtiqIVeSM660bfA8nJzXUvUR3ebjgJnERq5sJ6tcP1eSO6wMNE0UPQbf_fTkSdbuQXt3vTROcdwLYEqQSI0rms_9AMML_V4') }}">
 </script>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 <!-- <script src="https://static.cloud.coveo.com/atomic/v2/atomic.esm.js" type="module"></script> -->
 <!-- <script src="{{ asset('assets/js/coveo-atomic-ui70ab.js?v=1.005') }}" type="module" id="my-coveo-initializer"></script> -->
 <!-- <script src="{{ asset('assets/js/custom-web-components70ab.js?v=1.005') }}" type="module"
-  id="my-coveo-custom-web-components"></script> -->
+    id="my-coveo-custom-web-components"></script> -->
 <!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-  integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-  data-cf-beacon='{"rayId":"8e804ec21aa1ce0a","version":"2024.10.5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"acddc419780e419eaccdeeb31ecab15d","b":1}'
-  crossorigin="anonymous"></script> -->
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon='{"rayId":"8e804ec21aa1ce0a","version":"2024.10.5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"acddc419780e419eaccdeeb31ecab15d","b":1}'
+    crossorigin="anonymous"></script> -->
 <!-- <script src="{{ asset('assets/js/collapsiblock87fb.js?smujrd') }}" type="module"></script> -->
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+@stack('scripts')

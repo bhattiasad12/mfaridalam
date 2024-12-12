@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Visit;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -61,5 +62,14 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
+    }
+
+    public function getEvents()
+    {
+        $visit = Visit::where('id', 1)->value('count');
+
+        $pageName = 'Events';
+
+        return view('events', compact('pageName', 'visit'));
     }
 }

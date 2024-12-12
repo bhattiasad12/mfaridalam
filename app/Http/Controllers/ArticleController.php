@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Visit;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -65,6 +66,10 @@ class ArticleController extends Controller
 
     public function getArticles()
     {
-        return view('articles');
+        $visit = Visit::where('id', 1)->value('count');
+
+        $pageName = 'Articles';
+
+        return view('articles', compact('pageName', 'visit'));
     }
 }
