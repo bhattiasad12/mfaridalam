@@ -21,6 +21,7 @@ Route::get('/reports',[ReportController::class, 'getReports'])->name('getReports
 Route::get('/presentations',[PresentationController::class, 'getPresentations'])->name('getPresentations');
 Route::get('/news',[NewsController::class, 'getNews'])->name('getNews');
 Route::get('/events',[EventController::class, 'getEvents'])->name('getEvents');
+Route::get('/event-detail',[EventController::class, 'eventDetail'])->name('eventDetail');
 Route::get('/interviews',[InterviewController::class, 'getInterviews'])->name('getInterviews');
 Route::get('/about-me',[WelcomeController::class, 'getAboutMe'])->name('getAboutMe');
 Route::get('/contact-me',[WelcomeController::class, 'getContactMe'])->name('getContactMe');

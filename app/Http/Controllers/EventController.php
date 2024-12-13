@@ -27,10 +27,7 @@ class EventController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function store(Request $request) {}
 
     /**
      * Display the specified resource.
@@ -68,8 +65,17 @@ class EventController extends Controller
     {
         $visit = Visit::where('id', 1)->value('count');
 
-        $pageName = 'Events';
+        $pageName = 'Event Detail';
 
         return view('events', compact('pageName', 'visit'));
+    }
+
+    public function eventDetail()
+    {
+        $visit = Visit::where('id', 1)->value('count');
+
+        $pageName = 'Events';
+
+        return view('event_detail', compact('pageName', 'visit'));
     }
 }
