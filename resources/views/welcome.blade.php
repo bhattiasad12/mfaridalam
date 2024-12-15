@@ -33,17 +33,17 @@
                                     <div class="coh-container drop-zone-content coh-ce-cpt_hero-96075d54">
                                         <picture>
                                             <source
-                                                data-srcset="{{ asset('assets/images/a0d3dd3c-936d-4456-aec1-1a76b3d195ce.avif') }}"
+                                                data-srcset="{{ asset('assets/images/293240f7-0e5c-489d-aa7a-d853dae3cc35.avif') }}"
                                                 media="(min-width: 900px)" type="">
                                             <source
-                                                data-srcset="{{ asset('assets/images/a0d3dd3c-936d-4456-aec1-1a76b3d195ce.avif') }}"
+                                                data-srcset="{{ asset('assets/images/293240f7-0e5c-489d-aa7a-d853dae3cc35.avif') }}"
                                                 media="(min-width: 600px) and (max-width: 899px)" type="">
                                             <source
-                                                data-srcset="{{ asset('assets/images/a0d3dd3c-936d-4456-aec1-1a76b3d195ce.avif') }}"
+                                                data-srcset="{{ asset('assets/images/293240f7-0e5c-489d-aa7a-d853dae3cc35.avif') }}"
                                                 media="(max-width: 599px)" type="">
                                             <img class="coh-image ssa-component coh-component coh-image-responsive-xl coh-image-responsive-sm coh-image-responsive-ps coh-style-aspect-ratio---square coh-style-object-fit coh-style-fill-available-space"
                                                 loading="eager"
-                                                src="{{ asset('assets/images/a0d3dd3c-936d-4456-aec1-1a76b3d195ce.avif') }}"
+                                                src="{{ asset('assets/images/293240f7-0e5c-489d-aa7a-d853dae3cc35.avif') }}"
                                                 alt="blue" />
                                         </picture>
 
@@ -62,7 +62,7 @@
                                 class="coh-container ssa-component coh-component ssa-component-instance-04eaeaad-a4a1-41d7-8ea7-7cc1e9fc65ba coh-component-instance-04eaeaad-a4a1-41d7-8ea7-7cc1e9fc65ba  triple-links--dark ssa-instance-e5fc42cb7d55235acc3263df69d96800 coh-ce-cpt_newsfeed-28c8b2b">
                                 <div class="coh-container  coh-ce-cpt_newsfeed-5d6b4da7 coh-container-boxed"><span
                                         class="coh-inline-element link__label coh-style-headline-heavy coh-style-headline-500"
-                                        style="color: white;font-size: 1rem;padding: 4rem;">
+                                        style="color: white;font-size: 1rem;padding: 4rem; ">
                                         "KEEP YOUR DREAMS ALIVE. UNDERSTAND, TO ACHIEVE ANYTHING REQUIRES FAITH AND BELIEF
                                         IN YOURSELF, VISION, HARD WORK, DETERMINATION, AND DEDICATION. REMEMBER ALL THINGS
                                         ARE POSSIBLE FOR THOSE WHO BELIEVE" (DEVERS).
@@ -392,9 +392,9 @@
                                                     </div>
                                                     <div
                                                         class="coh-column ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
-                                                        <img src="{{ asset('assets/images/b3f83b15-2f70-44ab-9bed-ee2d974a43cc.avif') }}"
-                                                        alt="">
-                                                        <img src="{{ asset('assets/images/b315b5bd-6557-40f0-9537-629b38de71f9.avif') }}"
+                                                        <img src="{{ asset('assets/images/452531a3-5fc9-4957-9007-e3eebc2a346e.avif') }}"
+                                                        alt="" style="margin-bottom:3rem">
+                                                        <img src="{{ asset('assets/images/572d404f-6608-44a3-a028-050a044ed798.avif') }}"
                                                         alt="">
                                                     </div>
                                                 </div>
@@ -571,11 +571,11 @@
                                                     </div>
                                                     <div
                                                         class="coh-column ssa-instance-378da477127db0d1378c7db7bd9f8a31 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
-                                                            <img src="{{ asset('assets/images/b3f83b15-2f70-44ab-9bed-ee2d974a43cc.avif') }}"  alt="">
-                                                            <img src="{{ asset('assets/images/7903f1c8-1916-477e-affa-7626762a2fff.avif') }}"  alt="">
-                                                            <img src="{{ asset('assets/images/4a010ad8-3780-43b3-867f-8534e4ccc006.avif') }}"  alt="">
-                                                            <img src="{{ asset('assets/images/d6287080-efa1-4312-9a5d-d2b936fe0ccf.avif') }}"  alt="">
-                                                            <img src="{{ asset('assets/images/ee0839fe-9c9c-429d-b378-d063f621a6e8.avif') }}"  alt="">
+                                                            <img src="{{ asset('assets/images/385ef5df-6501-4c64-9223-4b730d0d4470.avif') }}"  alt="" style="margin-bottom:3rem">
+                                                            <img src="{{ asset('assets/images/0b64b6e9-a482-4696-b218-b00382002a80.avif') }}"  alt="" style="margin-bottom:3rem">
+                                                            <img src="{{ asset('assets/images/59e11e21-a736-4fae-a412-fa14120140ec.avif') }}"  alt="" style="margin-bottom:3rem">
+                                                            <img src="{{ asset('assets/images/c8f6fc2f-3871-4774-8371-111a960bf738.avif') }}"  alt="" style="margin-bottom:3rem">
+                                                            <img src="{{ asset('assets/images/b12495b0-14fa-4781-a10c-708984a11bad.avif') }}"  alt="">
                                                     </div>
                                                 </div>
                                             </div>

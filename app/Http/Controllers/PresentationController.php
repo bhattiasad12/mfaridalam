@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Presentation;
 use App\Models\Visit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class PresentationController extends Controller
 {
@@ -13,7 +15,9 @@ class PresentationController extends Controller
      */
     public function index()
     {
-        //
+        $pageName = 'Presentations List'; // Set a page name
+        $data = Presentation::all(); // Fetch all articles from the database
+        return view('presentations.index', compact('pageName', 'data'));
     }
 
     /**
@@ -21,7 +25,7 @@ class PresentationController extends Controller
      */
     public function create()
     {
-        //
+        return view('presentations.create');
     }
 
     /**
@@ -29,7 +33,28 @@ class PresentationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
+        ]);
+
+        $folderName = 'uploads/presentations/' . Str::slug($request->name) . '_' . time();
+
+        $directory = public_path($folderName);
+        if (!File::exists($directory)) {
+            File::makeDirectory($directory, 0755, true);
+        }
+
+        $originalFileName = $request->file('file')->getClientOriginalName();
+
+        $filePath = $request->file('file')->move($directory, $originalFileName);
+
+        Presentation::create([
+            'name' => $request->name,
+            'path' => $folderName . '/' . $originalFileName,
+        ]);
+
+        return redirect()->route('presentations.create')->with('success', 'Presentation saved successfully!');
     }
 
     /**
@@ -61,7 +86,15 @@ class PresentationController extends Controller
      */
     public function destroy(Presentation $presentation)
     {
-        //
+        $filePath = public_path($presentation->path);
+
+        if (File::exists($filePath)) {
+            File::delete($filePath); // Delete the file from storage
+        }
+
+        $presentation->delete();
+
+        return redirect()->route('presentations.index')->with('success', 'presentations and file deleted successfully!');
     }
 
     public function getPresentations()
@@ -69,7 +102,21 @@ class PresentationController extends Controller
         $visit = Visit::where('id', 1)->value('count');
 
         $pageName = 'Presentations';
-        
+
         return view('presentations', compact('pageName', 'visit'));
+    }
+
+    public function download($id)
+    {
+        $resource = Presentation::findOrFail($id);
+
+        $filePath = public_path($resource->path); 
+        $originalFileName = basename($resource->path); 
+
+        if (file_exists($filePath)) {
+            return response()->download($filePath, $originalFileName);
+        } else {
+            return redirect()->route('presentations.index')->with('error', 'File not found.');
+        }
     }
 }

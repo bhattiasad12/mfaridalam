@@ -13,7 +13,7 @@
                     <div class="coh-style-flex-container align-items--center coh-style-position-relative oidc-menu">
                         <div
                             class="coh-style-flex-container align-items--center justify-content--center oidc coh-style-mobile-account-links">
-                            <a href="../azprdb2c1.b2clogin.com/azprdb2c1.onmicrosoft.com/b2c_1a_customer_cfa_signup_signin_b2clogin/oauth2/v2.0/authorize7134.html"
+                            <a href="{{ route('login') }}"
                                 class="js--oidc-menu-link coh-link coh-style-link-light coh-style-label-200 piped"
                                 target="_self">Sign In</a>
                             {{-- <a href="../azprdb2c1.b2clogin.com/azprdb2c1.onmicrosoft.com/b2c_1a_customer_cfa_signup_signin_b2clogin/oauth2/v2.0/authorize05e2.html"
@@ -56,7 +56,7 @@
                                 class="coh-style-flex-container align-items--center coh-style-position-relative oidc-menu">
                                 <div
                                     class="coh-style-flex-container align-items--center justify-content--center oidc coh-style-mobile-account-links">
-                                    <a href="../azprdb2c1.b2clogin.com/azprdb2c1.onmicrosoft.com/b2c_1a_customer_cfa_signup_signin_b2clogin/oauth2/v2.0/authorize7134.html"
+                                    <a href="{{ route('login') }}"
                                         class="js--oidc-menu-link coh-link coh-style-link-button-dark coh-style-text-color-dark-background"
                                         target="_self">Sign In</a>
                                     {{-- <a href="../azprdb2c1.b2clogin.com/azprdb2c1.onmicrosoft.com/b2c_1a_customer_cfa_signup_signin_b2clogin/oauth2/v2.0/authorize05e2.html"
@@ -134,7 +134,8 @@
                                                 class="coh-link coh-style-link-light coh-ce-55dec3c3 js-coh-menu-item-link">About
                                                 me</a></li>
                                         <li class="coh-menu-list-item coh-ce-1953dd1f js-coh-menu-item"
-                                            data-coh-settings='{"xl":"hidden"}'> <a href="{{ route('getContactMe') }}"
+                                            data-coh-settings='{"xl":"hidden"}'> <a
+                                                href="{{ route('getContactMe') }}"
                                                 data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"none"} }'
                                                 class="coh-link coh-style-link-light coh-ce-55dec3c3 js-coh-menu-item-link">Contact
                                                 me</a></li>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Visit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
@@ -13,7 +15,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $pageName = 'Articles List'; // Set a page name
+        $data = Article::all(); // Fetch all articles from the database
+
+        return view('articles.index', compact('pageName', 'data'));
     }
 
     /**
@@ -21,15 +26,42 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
+
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
+        ]);
+
+        // Create a unique folder name based on article name and timestamp
+        $folderName = 'uploads/articles/' . Str::slug($request->name) . '_' . time(); // Ensure uniqueness by appending timestamp
+
+        // Ensure the directory exists
+        $directory = public_path($folderName);
+        if (!File::exists($directory)) {
+            File::makeDirectory($directory, 0755, true);
+        }
+
+        // Get the original file name
+        $originalFileName = $request->file('file')->getClientOriginalName();
+
+        // Store the file in the unique folder with the original file name
+        $filePath = $request->file('file')->move($directory, $originalFileName);
+
+        // Save article to the database with the relative file path
+        Article::create([
+            'name' => $request->name,
+            'path' => $folderName . '/' . $originalFileName, // Store the relative file path
+        ]);
+
+        return redirect()->route('articles.create')->with('success', 'Article saved successfully!');
     }
 
     /**
@@ -61,7 +93,16 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $filePath = public_path($article->path);
+
+        if (File::exists($filePath)) {
+            File::delete($filePath); // Delete the file from storage
+        }
+
+        // Delete the article record from the database
+        $article->delete();
+
+        return redirect()->route('articles.index')->with('success', 'Article and file deleted successfully!');
     }
 
     public function getArticles()
@@ -71,5 +112,19 @@ class ArticleController extends Controller
         $pageName = 'Articles';
 
         return view('articles', compact('pageName', 'visit'));
+    }
+
+    public function download($id)
+    {
+        $article = Article::findOrFail($id); // Find the article by ID
+
+        $filePath = public_path($article->path); // Get the full file path
+        $originalFileName = basename($article->path); // Get the original file name from the file path
+
+        if (file_exists($filePath)) {
+            return response()->download($filePath, $originalFileName); // Return file with original name
+        } else {
+            return redirect()->route('articles.index')->with('error', 'File not found.');
+        }
     }
 }

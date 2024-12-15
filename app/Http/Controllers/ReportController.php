@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Report;
 use App\Models\Visit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class ReportController extends Controller
 {
@@ -13,7 +15,9 @@ class ReportController extends Controller
      */
     public function index()
     {
-        //
+        $pageName = 'Reports List';
+        $data = Report::all(); 
+        return view('reports.index', compact('pageName', 'data'));
     }
 
     /**
@@ -21,7 +25,7 @@ class ReportController extends Controller
      */
     public function create()
     {
-        //
+        return view('reports.create');
     }
 
     /**
@@ -29,7 +33,28 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
+        ]);
+
+        $folderName = 'uploads/reports/' . Str::slug($request->name) . '_' . time();
+
+        $directory = public_path($folderName);
+        if (!File::exists($directory)) {
+            File::makeDirectory($directory, 0755, true);
+        }
+
+        $originalFileName = $request->file('file')->getClientOriginalName();
+
+        $filePath = $request->file('file')->move($directory, $originalFileName);
+
+        Report::create([
+            'name' => $request->name,
+            'path' => $folderName . '/' . $originalFileName,
+        ]);
+
+        return redirect()->route('reports.create')->with('success', 'Report saved successfully!');
     }
 
     /**
@@ -61,8 +86,18 @@ class ReportController extends Controller
      */
     public function destroy(Report $report)
     {
-        //
+        $filePath = public_path($report->path);
+
+        if (File::exists($filePath)) {
+            File::delete($filePath); // Delete the file from storage
+        }
+
+        // Delete the report record from the database
+        $report->delete();
+
+        return redirect()->route('reports.index')->with('success', 'Reports and file deleted successfully!');
     }
+    
     public function getReports()
     {
         $visit = Visit::where('id', 1)->value('count');
@@ -70,5 +105,19 @@ class ReportController extends Controller
         $pageName = 'Reports';
 
         return view('reports', compact('pageName', 'visit'));
+    }
+
+    public function download($id)
+    {
+        $resource = Report::findOrFail($id); // Find the article by ID
+
+        $filePath = public_path($resource->path); // Get the full file path
+        $originalFileName = basename($resource->path); // Get the original file name from the file path
+
+        if (file_exists($filePath)) {
+            return response()->download($filePath, $originalFileName); // Return file with original name
+        } else {
+            return redirect()->route('reports.index')->with('error', 'File not found.');
+        }
     }
 }

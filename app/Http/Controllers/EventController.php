@@ -13,8 +13,10 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $pageName = '';
+        return view('events.index', compact('pageName'));
     }
+
 
     /**
      * Show the form for creating a new resource.

@@ -13,8 +13,10 @@ class InterviewController extends Controller
      */
     public function index()
     {
-        //
+        $pageName = '';
+        return view('interviews.index', compact('pageName'));
     }
+
 
     /**
      * Show the form for creating a new resource.

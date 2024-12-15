@@ -200,11 +200,11 @@
                                                     </div>
                                                     <div
                                                         class="coh-column ssa-instance-378da477127db0d1378c7db7bd9f8a31 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
-                                                        <img src="{{ asset('assets/images/2bbf7a03-a89d-4033-b202-8c45623a28ba.jpg') }}"
-                                                            alt="">
-                                                        <img src="{{ asset('assets/images/b12f5e6a-78e4-4dc8-baac-c0f06c902d40.jpg') }}"
-                                                            alt="">
-                                                        <img src="{{ asset('assets/images/90cbce89-6605-4c78-bf9b-f774601ed438.jpg') }}"
+                                                        <img src="{{ asset('assets/images/ac44e17a-3d71-4979-ac23-b85f8134d992.avif') }}"
+                                                            alt="" style="margin-bottom:3rem">
+                                                        <img src="{{ asset('assets/images/0af184ad-ecbf-460b-8fbe-afa139925b67.avif') }}"
+                                                            alt="" style="margin-bottom:3rem">
+                                                        <img src="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
                                                             alt="">
                                                     </div>
                                                 </div>
@@ -276,7 +276,7 @@
                                                     <div
                                                         class="coh-column ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
 
-                                                        <img src="{{ asset('assets/images/932ec226-3d75-434c-b9a5-3172d235a209.jpg') }}"
+                                                        <img src="{{ asset('assets/images/932ec226-3d75-434c-b9a5-3172d235a209.avif') }}"
                                                             alt="">
                                                     </div>
                                                 </div>
