@@ -8,6 +8,7 @@ use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\WelcomeController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'welcome'])->name('welcome');
@@ -39,4 +40,25 @@ Route::middleware('auth')->group(function () {
     Route::get('/presentations/{id}/download', [PresentationController::class, 'download'])->name('presentations.download');
     Route::get('/news/{id}/download', [NewsController::class, 'download'])->name('news.download');
 });
+
+
+Route::get('/down', function () {
+    // Check if the application is currently in maintenance mode
+    if (app()->isDownForMaintenance()) {
+        // Bring the application back up
+        Artisan::call('up');
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Application is now live.',
+        ]);
+    } else {
+        // Put the application into maintenance mode
+        Artisan::call('down');
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Application is now in maintenance mode.',
+        ]);
+    }
+});
+
 require __DIR__ . '/auth.php';
