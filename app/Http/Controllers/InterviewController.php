@@ -14,7 +14,9 @@ class InterviewController extends Controller
     public function index()
     {
         $pageName = '';
-        return view('interviews.index', compact('pageName'));
+
+        $data = Interview::all();
+        return view('interviews.index', compact('pageName', 'data'));
     }
 
 
@@ -23,7 +25,7 @@ class InterviewController extends Controller
      */
     public function create()
     {
-        //
+        return view('interviews.create');
     }
 
     /**
@@ -31,7 +33,19 @@ class InterviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'url' => 'required|string|max:255',
+        ]);
+
+        $url = explode('=', $request->url);
+
+        Interview::create([
+            'name' => $request->name,
+            'url' => $url[1],
+        ]);
+
+        return redirect()->route('interviews.create')->with('success', 'Interview saved successfully!');
     }
 
     /**
@@ -63,15 +77,17 @@ class InterviewController extends Controller
      */
     public function destroy(Interview $interview)
     {
-        //
+        $interview->delete();
+
+        return redirect()->route('interviews.index')->with('success', 'interview deleted successfully!');
     }
 
     public function getInterviews()
     {
-        $visit = Visit::where('id', 1)->value('count');
-
         $pageName = 'Interviews';
 
-        return view('interviews', compact('pageName', 'visit'));
+        $data = Interview::all();
+
+        return view('interviews', compact('pageName', 'data'));
     }
 }

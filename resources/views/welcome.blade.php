@@ -304,7 +304,7 @@
                                                     <div
                                                         class="coh-column ssa-instance-378da477127db0d1378c7db7bd9f8a31 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
                                                         <img src="{{ asset('assets/images/1839be53-ddf5-4389-b37e-c43752378076.avif') }}"
-                                                            alt="">
+                                                            alt="" style="border:  8px solid #224366;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -393,9 +393,10 @@
                                                     <div
                                                         class="coh-column ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
                                                         <img src="{{ asset('assets/images/452531a3-5fc9-4957-9007-e3eebc2a346e.avif') }}"
-                                                        alt="" style="margin-bottom:3rem">
+                                                            alt=""
+                                                            style="margin-bottom:3rem; border: 8px solid #224366;">
                                                         <img src="{{ asset('assets/images/572d404f-6608-44a3-a028-050a044ed798.avif') }}"
-                                                        alt="">
+                                                            alt="" style="border:  8px solid #224366;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -571,11 +572,20 @@
                                                     </div>
                                                     <div
                                                         class="coh-column ssa-instance-378da477127db0d1378c7db7bd9f8a31 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
-                                                            <img src="{{ asset('assets/images/385ef5df-6501-4c64-9223-4b730d0d4470.avif') }}"  alt="" style="margin-bottom:3rem">
-                                                            <img src="{{ asset('assets/images/0b64b6e9-a482-4696-b218-b00382002a80.avif') }}"  alt="" style="margin-bottom:3rem">
-                                                            <img src="{{ asset('assets/images/59e11e21-a736-4fae-a412-fa14120140ec.avif') }}"  alt="" style="margin-bottom:3rem">
-                                                            <img src="{{ asset('assets/images/c8f6fc2f-3871-4774-8371-111a960bf738.avif') }}"  alt="" style="margin-bottom:3rem">
-                                                            <img src="{{ asset('assets/images/b12495b0-14fa-4781-a10c-708984a11bad.avif') }}"  alt="">
+                                                        <img src="{{ asset('assets/images/385ef5df-6501-4c64-9223-4b730d0d4470.avif') }}"
+                                                            alt=""
+                                                            style="margin-bottom:3rem; border:  8px solid #224366;">
+                                                        <img src="{{ asset('assets/images/0b64b6e9-a482-4696-b218-b00382002a80.avif') }}"
+                                                            alt=""
+                                                            style="margin-bottom:3rem; border:  8px solid #224366;">
+                                                        <img src="{{ asset('assets/images/59e11e21-a736-4fae-a412-fa14120140ec.avif') }}"
+                                                            alt=""
+                                                            style="margin-bottom:3rem; border:  8px solid #224366;">
+                                                        <img src="{{ asset('assets/images/c8f6fc2f-3871-4774-8371-111a960bf738.avif') }}"
+                                                            alt=""
+                                                            style="margin-bottom:3rem; border:  8px solid #224366;">
+                                                        <img src="{{ asset('assets/images/b12495b0-14fa-4781-a10c-708984a11bad.avif') }}"
+                                                            alt="" style="border:  8px solid #224366;">
                                                     </div>
                                                 </div>
                                             </div>

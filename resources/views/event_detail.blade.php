@@ -106,9 +106,9 @@
                                                             <h1
                                                                 class="coh-heading ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-headline-100 coh-style-text-color-dark-background align-text-left coh-style-cfa-margin-bottom-sm     ssa-instance-e43e33f0edee0753341d7d614e3a2b59 coh-ce-cpt_heading-b45c50fc">
                                                                 {{ $pageName }} </h1>
-                                                            <span
+                                                            {{-- <span
                                                                 class="coh-inline-element ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-paragraph-50  coh-style-text-color-dark-background  coh-style-cfa-margin-bottom-lg  ssa-instance-d6c68d38141400ac35fc661ec998b13b coh-ce-cpt_text-ccc8ea09">Stay
-                                                                informed about changes in the industry. </span>
+                                                                informed about changes in the industry. </span> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -116,16 +116,16 @@
                                                     class="coh-column ssa-instance-46b0422ff4e7b025fa0ca43008caaaf0 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-7 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
                                                     <div class="coh-container coh-ce-cpt_hero_banner-f2668b67">
                                                         <picture>
-                                                            <source data-srcset="{{ asset('assets/images/farid3.jpg') }}"
+                                                            <source data-srcset="{{ asset('assets/images/event.avif') }}"
                                                                 media="(min-width: 900px)" type="">
-                                                            <source data-srcset="{{ asset('assets/images/farid3.jpg') }}"
+                                                            <source data-srcset="{{ asset('assets/images/event.avif') }}"
                                                                 media="(min-width: 600px) and (max-width: 899px)"
                                                                 type="">
-                                                            <source data-srcset="{{ asset('assets/images/farid3.jpg') }}"
+                                                            <source data-srcset="{{ asset('assets/images/event.avif') }}"
                                                                 media="(max-width: 599px)" type="">
                                                             <img class="coh-image ssa-component coh-component coh-image-responsive-xl coh-image-responsive-sm coh-image-responsive-ps  coh-style-object-fit "
                                                                 loading="eager"
-                                                                src="{{ asset('assets/images/farid3.jpg') }}"
+                                                                src="{{ asset('assets/images/event.avif') }}"
                                                                 alt="Reading on laptop">
                                                         </picture>
 

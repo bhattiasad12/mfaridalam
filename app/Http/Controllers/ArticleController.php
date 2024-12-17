@@ -107,11 +107,9 @@ class ArticleController extends Controller
 
     public function getArticles()
     {
-        $visit = Visit::where('id', 1)->value('count');
-
         $pageName = 'Articles';
 
-        return view('articles', compact('pageName', 'visit'));
+        return view('articles', compact('pageName'));
     }
 
     public function download($id)

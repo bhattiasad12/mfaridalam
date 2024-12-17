@@ -100,11 +100,9 @@ class ReportController extends Controller
     
     public function getReports()
     {
-        $visit = Visit::where('id', 1)->value('count');
-
         $pageName = 'Reports';
 
-        return view('reports', compact('pageName', 'visit'));
+        return view('reports', compact('pageName'));
     }
 
     public function download($id)

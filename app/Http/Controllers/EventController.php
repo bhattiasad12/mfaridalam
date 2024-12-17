@@ -65,19 +65,15 @@ class EventController extends Controller
 
     public function getEvents()
     {
-        $visit = Visit::where('id', 1)->value('count');
-
         $pageName = 'Event Detail';
 
-        return view('events', compact('pageName', 'visit'));
+        return view('events', compact('pageName'));
     }
 
     public function eventDetail()
     {
-        $visit = Visit::where('id', 1)->value('count');
-
         $pageName = 'Events';
 
-        return view('event_detail', compact('pageName', 'visit'));
+        return view('event_detail', compact('pageName'));
     }
 }

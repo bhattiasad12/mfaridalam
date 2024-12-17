@@ -100,11 +100,9 @@ class NewsController extends Controller
 
     public function getNews()
     {
-        $visit = Visit::where('id', 1)->value('count');
-
         $pageName = 'News';
 
-        return view('news', compact('pageName', 'visit'));
+        return view('news', compact('pageName'));
     }
 
     public function download($id)

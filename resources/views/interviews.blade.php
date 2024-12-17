@@ -29,7 +29,7 @@
 
             .custom-video-card {
                 background: #fff;
-                /* border-radius: 8px; */
+                border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 overflow: hidden;
                 transition: transform 0.3s, box-shadow 0.3s;
@@ -43,7 +43,7 @@
 
             .custom-video-card img {
                 width: 100%;
-                height: 180px;
+                height: 199px;
                 object-fit: cover;
             }
 
@@ -158,9 +158,9 @@
                                                             <h1
                                                                 class="coh-heading ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-headline-100 coh-style-text-color-dark-background align-text-left coh-style-cfa-margin-bottom-sm     ssa-instance-e43e33f0edee0753341d7d614e3a2b59 coh-ce-cpt_heading-b45c50fc">
                                                                 {{ $pageName }}</h1>
-                                                            <span
+                                                            {{-- <span
                                                                 class="coh-inline-element ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-paragraph-50  coh-style-text-color-dark-background  coh-style-cfa-margin-bottom-lg  ssa-instance-d6c68d38141400ac35fc661ec998b13b coh-ce-cpt_text-ccc8ea09">Stay
-                                                                informed about changes in the industry. </span>
+                                                                informed about changes in the industry. </span> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -168,16 +168,16 @@
                                                     class="coh-column ssa-instance-46b0422ff4e7b025fa0ca43008caaaf0 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-7 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
                                                     <div class="coh-container coh-ce-cpt_hero_banner-f2668b67">
                                                         <picture>
-                                                            <source data-srcset="{{ asset('assets/images/farid3.jpg') }}"
+                                                            <source data-srcset="{{ asset('assets/images/interview.jpg') }}"
                                                                 media="(min-width: 900px)" type="">
-                                                            <source data-srcset="{{ asset('assets/images/farid3.jpg') }}"
+                                                            <source data-srcset="{{ asset('assets/images/interview.jpg') }}"
                                                                 media="(min-width: 600px) and (max-width: 899px)"
                                                                 type="">
-                                                            <source data-srcset="{{ asset('assets/images/farid3.jpg') }}"
+                                                            <source data-srcset="{{ asset('assets/images/interview.jpg') }}"
                                                                 media="(max-width: 599px)" type="">
                                                             <img class="coh-image ssa-component coh-component coh-image-responsive-xl coh-image-responsive-sm coh-image-responsive-ps  coh-style-object-fit "
                                                                 loading="eager"
-                                                                src="{{ asset('assets/images/farid3.jpg') }}"
+                                                                src="{{ asset('assets/images/interview.jpg') }}"
                                                                 alt="Reading on laptop">
                                                         </picture>
 
@@ -197,39 +197,19 @@
                                         Browse all {{ $pageName }} </h2>
                                     <div class="custom-container">
                                         <div class="custom-video-grid">
-                                            <div class="custom-video-card" data-video-id="_wv02lvn8UI">
-                                                <img src="http://img.youtube.com/vi/{{ '_wv02lvn8UI' }}/hqdefault.jpg"
-                                                    alt="Video Thumbnail">
-                                                <div class="custom-info">
-                                                    <h3>Speech by Mr. Farid Alam (CEO, AKD Securities Limited) at AirLink
-                                                        CEO Summit Lahore 2022!
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="custom-video-card" data-video-id="SMHBi00wX6E">
-                                                <img src="http://img.youtube.com/vi/{{ 'SMHBi00wX6E' }}/hqdefault.jpg"
-                                                    alt="Video Thumbnail">
-                                                <div class="custom-info">
-                                                    <h3>MR Farid Alam CEO AKD Securities Show Karobar
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="custom-video-card" data-video-id="tZNh3EgJ7ts">
-                                                <img src="http://img.youtube.com/vi/{{ 'tZNh3EgJ7ts' }}/hqdefault.jpg"
-                                                    alt="Video Thumbnail">
-                                                <div class="custom-info">
-                                                    <h3>Podcast at AirLink CEO Summit | Coffee with CEO | Farid Alam
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="custom-video-card" data-video-id="TiRDUKBHo5U">
-                                                <img src="http://img.youtube.com/vi/{{ 'TiRDUKBHo5U' }}/hqdefault.jpg"
-                                                    alt="Video Thumbnail">
-                                                <div class="custom-info">
-                                                    <h3>Mr. Muhammad Farid Alam (Chief Executive Officer at AKDSL)
-                                                    </h3>
-                                                </div>
-                                            </div>
+                                            @if ($data->isEmpty())
+                                                <p>No videos found.</p>
+                                            @else
+                                                @foreach ($data as $video)
+                                                    <div class="custom-video-card" data-video-id="{{ $video['url'] }}">
+                                                        <img src="http://img.youtube.com/vi/{{ $video['url'] }}/hqdefault.jpg"
+                                                            alt="Video Thumbnail">
+                                                        <div class="custom-info">
+                                                            <h3>{{ $video['name'] }}</h3>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            @endif
                                         </div>
                                     </div>
 

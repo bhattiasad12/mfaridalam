@@ -44,9 +44,9 @@
                                                             <h1
                                                                 class="coh-heading ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-headline-100 coh-style-text-color-dark-background align-text-left coh-style-cfa-margin-bottom-sm     ssa-instance-e43e33f0edee0753341d7d614e3a2b59 coh-ce-cpt_heading-b45c50fc">
                                                                 {{ $pageName }}</h1>
-                                                            <span
+                                                            {{-- <span
                                                                 class="coh-inline-element ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-paragraph-50  coh-style-text-color-dark-background  coh-style-cfa-margin-bottom-lg  ssa-instance-d6c68d38141400ac35fc661ec998b13b coh-ce-cpt_text-ccc8ea09">Stay
-                                                                informed about changes in the industry. </span>
+                                                                informed about changes in the industry. </span> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -55,18 +55,18 @@
                                                     <div class="coh-container coh-ce-cpt_hero_banner-f2668b67">
                                                         <picture>
                                                             <source
-                                                                data-srcset="{{ asset('assets/images/farid3.jpg') }}"
+                                                                data-srcset="{{ asset('assets/images/articles.avif') }}"
                                                                 media="(min-width: 900px)" type="">
                                                             <source
-                                                                data-srcset="{{ asset('assets/images/farid3.jpg') }}"
+                                                                data-srcset="{{ asset('assets/images/articles.avif') }}"
                                                                 media="(min-width: 600px) and (max-width: 899px)"
                                                                 type="">
                                                             <source
-                                                                data-srcset="{{ asset('assets/images/farid3.jpg') }}"
+                                                                data-srcset="{{ asset('assets/images/articles.avif') }}"
                                                                 media="(max-width: 599px)" type="">
                                                             <img class="coh-image ssa-component coh-component coh-image-responsive-xl coh-image-responsive-sm coh-image-responsive-ps  coh-style-object-fit "
                                                                 loading="eager"
-                                                                src="{{ asset('assets/images/farid3.jpg') }}"
+                                                                src="{{ asset('assets/images/articles.avif') }}"
                                                                 alt="Reading on laptop">
                                                         </picture>
 

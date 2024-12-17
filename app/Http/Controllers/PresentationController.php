@@ -99,11 +99,9 @@ class PresentationController extends Controller
 
     public function getPresentations()
     {
-        $visit = Visit::where('id', 1)->value('count');
-
         $pageName = 'Presentations';
 
-        return view('presentations', compact('pageName', 'visit'));
+        return view('presentations', compact('pageName'));
     }
 
     public function download($id)

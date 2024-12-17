@@ -8,24 +8,25 @@ use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Middleware\GetVisitCount;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [WelcomeController::class, 'welcome'])->name('welcome');
+Route::get('/', [WelcomeController::class, 'welcome'])->middleware(GetVisitCount::class)->name('welcome');
 
 Route::get('/dashboard', function () {
     return redirect()->route('articles.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/getArticles', [ArticleController::class, 'getArticles'])->name('getArticles');
-Route::get('/getreports', [ReportController::class, 'getReports'])->name('getReports');
-Route::get('/getpresentations', [PresentationController::class, 'getPresentations'])->name('getPresentations');
-Route::get('/getnews', [NewsController::class, 'getNews'])->name('getNews');
-Route::get('/getevents', [EventController::class, 'getEvents'])->name('getEvents');
-Route::get('/getevent-detail', [EventController::class, 'eventDetail'])->name('eventDetail');
-Route::get('/getinterviews', [InterviewController::class, 'getInterviews'])->name('getInterviews');
-Route::get('/getabout-me', [WelcomeController::class, 'getAboutMe'])->name('getAboutMe');
-Route::get('/getcontact-me', [WelcomeController::class, 'getContactMe'])->name('getContactMe');
+Route::get('/getArticles', [ArticleController::class, 'getArticles'])->middleware(GetVisitCount::class)->name('getArticles');
+Route::get('/getreports', [ReportController::class, 'getReports'])->middleware(GetVisitCount::class)->name('getReports');
+Route::get('/getpresentations', [PresentationController::class, 'getPresentations'])->middleware(GetVisitCount::class)->name('getPresentations');
+Route::get('/getnews', [NewsController::class, 'getNews'])->middleware(GetVisitCount::class)->name('getNews');
+Route::get('/getevents', [EventController::class, 'getEvents'])->middleware(GetVisitCount::class)->name('getEvents');
+Route::get('/getevent-detail', [EventController::class, 'eventDetail'])->middleware(GetVisitCount::class)->name('eventDetail');
+Route::get('/getinterviews', [InterviewController::class, 'getInterviews'])->middleware(GetVisitCount::class)->middleware(GetVisitCount::class)->name('getInterviews');
+Route::get('/getabout-me', [WelcomeController::class, 'getAboutMe'])->middleware(GetVisitCount::class)->name('getAboutMe');
+Route::get('/getcontact-me', [WelcomeController::class, 'getContactMe'])->middleware(GetVisitCount::class)->name('getContactMe');
 
 Route::middleware('auth')->group(function () {
     Route::resource('articles', ArticleController::class);

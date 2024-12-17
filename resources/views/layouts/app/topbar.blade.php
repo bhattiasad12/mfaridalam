@@ -34,7 +34,7 @@
                     class="coh-inline-element coh-ce-cpt_site_header-b900b83f" style="text-decoration: none;"
                     href="/" title="Home">
                     <img src="{{ asset('assets/images/cropped-Muhammad-3-1_inverted.avif') }}" alt="Home"
-                        fetchpriority="high" style="height: 150px;" loading="eager" />
+                        fetchpriority="high" style="height: 120px;" loading="eager" />
                     <div
                         class="coh-container ssa-component coh-component ssa-component-instance-2deda0ba-35c6-4be9-a864-fea3e44be036 coh-component-instance-2deda0ba-35c6-4be9-a864-fea3e44be036 ">
                         <div class="coh-block light-title coh-ce-cpt_drupal_blocks-91a01d0a">
@@ -67,81 +67,61 @@
                         </div>
                     </div>
                     <ul class="coh-menu-list-container coh-unordered-list menu-level-1 coh-ce-a757c86a">
-                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item has-children"
-                            data-coh-settings='{"xl":"hidden"}'> <span
-                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"blind","animationEasing":"linear","animationTarget":".menu-level-2-wrapper","animationDirection":"up","animationDuration":0},"sm":{"link_interaction":"toggle-on-click","animationType":"blind","animationDirection":"up","animationEasing":"easeInOutCubic","animationTarget":".menu-level-2-wrapper","animationDuration":300} }'
-                                class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0">Resources</span>
-                            <div class="coh-container menu-level-2-wrapper coh-ce-7509f1c" aria-role="menu">
-                                <div class="coh-container coh-ce-885d08e0 coh-container-boxed">
-                                    <ul class="coh-menu-list-container coh-unordered-list menu-level-2 coh-ce-4eb3061c">
-                                        <li class="coh-menu-list-item coh-ce-1953dd1f js-coh-menu-item"
-                                            data-coh-settings='{"xl":"hidden"}'> <a href="{{ route('getArticles') }}"
-                                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"none"} }'
-                                                class="coh-link coh-style-link-light coh-ce-55dec3c3 js-coh-menu-item-link">Articles
-                                                overview</a></li>
-                                        <li class="coh-menu-list-item coh-ce-1953dd1f js-coh-menu-item"
-                                            data-coh-settings='{"xl":"hidden"}'> <a href="{{ route('getReports') }}"
-                                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"none"} }'
-                                                class="coh-link coh-style-link-light coh-ce-55dec3c3 js-coh-menu-item-link">Reports
-                                                benefits</a></li>
-                                        <li class="coh-menu-list-item coh-ce-1953dd1f js-coh-menu-item"
-                                            data-coh-settings='{"xl":"hidden"}'> <a
-                                                href="{{ route('getPresentations') }}"
-                                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"none"} }'
-                                                class="coh-link coh-style-link-light coh-ce-55dec3c3 js-coh-menu-item-link">Presentations</a>
-                                        </li>
-                                        <li class="coh-menu-list-item coh-ce-1953dd1f js-coh-menu-item"
-                                            data-coh-settings='{"xl":"hidden"}'> <a href="{{ route('getNews') }}"
-                                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"none"} }'
-                                                class="coh-link coh-style-link-light coh-ce-55dec3c3 js-coh-menu-item-link">News</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
+                            <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
+                                data-once="js-coh-menu-item-link-init">
+                                <a href="{{ route('getArticles') }}" style="color:#5f5f5f">Articles
+                                </a>
+                            </span>
                         </li>
-                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item has-children"
-                            data-coh-settings='{"xl":"hidden"}'> <span
-                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"blind","animationEasing":"linear","animationTarget":".menu-level-2-wrapper","animationDirection":"up","animationDuration":0},"sm":{"link_interaction":"toggle-on-click","animationType":"blind","animationDirection":"up","animationEasing":"easeInOutCubic","animationTarget":".menu-level-2-wrapper","animationDuration":300} }'
-                                class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0">Insights</span>
-                            <div class="coh-container menu-level-2-wrapper coh-ce-7509f1c" aria-role="menu">
-                                <div class="coh-container coh-ce-885d08e0 coh-container-boxed">
-                                    <ul class="coh-menu-list-container coh-unordered-list menu-level-2 coh-ce-4eb3061c">
-                                        <li class="coh-menu-list-item coh-ce-1953dd1f js-coh-menu-item"
-                                            data-coh-settings='{"xl":"hidden"}'> <a href="{{ route('getInterviews') }}"
-                                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"none"} }'
-                                                class="coh-link coh-style-link-light coh-ce-55dec3c3 js-coh-menu-item-link">Interviews</a>
-                                        </li>
-                                        <li class="coh-menu-list-item coh-ce-1953dd1f js-coh-menu-item"
-                                            data-coh-settings='{"xl":"hidden"}'> <a href="{{ route('getEvents') }}"
-                                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"none"} }'
-                                                class="coh-link coh-style-link-light coh-ce-55dec3c3 js-coh-menu-item-link">Events</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
+                            <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
+                                data-once="js-coh-menu-item-link-init">
+                                <a href="{{ route('getReports') }}" style="color:#5f5f5f">Reports
+                                </a>
+                            </span>
                         </li>
-                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item has-children"
-                            data-coh-settings='{"xl":"hidden"}'> <span
-                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"blind","animationEasing":"linear","animationTarget":".menu-level-2-wrapper","animationDirection":"up","animationDuration":0},"sm":{"link_interaction":"toggle-on-click","animationType":"blind","animationDirection":"up","animationEasing":"easeInOutCubic","animationTarget":".menu-level-2-wrapper","animationDuration":300} }'
-                                class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0">About</span>
-                            <div class="coh-container menu-level-2-wrapper coh-ce-7509f1c" aria-role="menu">
-                                <div class="coh-container coh-ce-885d08e0 coh-container-boxed">
-                                    <ul
-                                        class="coh-menu-list-container coh-unordered-list menu-level-2 coh-ce-4eb3061c">
-                                        <li class="coh-menu-list-item coh-ce-1953dd1f js-coh-menu-item"
-                                            data-coh-settings='{"xl":"hidden"}'> <a href="{{ route('getAboutMe') }}"
-                                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"none"} }'
-                                                class="coh-link coh-style-link-light coh-ce-55dec3c3 js-coh-menu-item-link">About
-                                                me</a></li>
-                                        <li class="coh-menu-list-item coh-ce-1953dd1f js-coh-menu-item"
-                                            data-coh-settings='{"xl":"hidden"}'> <a
-                                                href="{{ route('getContactMe') }}"
-                                                data-coh-settings='{ "xl":{"link_interaction":"toggle-on-hover","animationType":"none"} }'
-                                                class="coh-link coh-style-link-light coh-ce-55dec3c3 js-coh-menu-item-link">Contact
-                                                me</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
+                            <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
+                                data-once="js-coh-menu-item-link-init">
+                                <a href="{{ route('getPresentations') }}" style="color:#5f5f5f">Presentations
+                                </a>
+                            </span>
+                        </li>
+                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
+                            <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
+                                data-once="js-coh-menu-item-link-init">
+                                <a href="{{ route('getNews') }}" style="color:#5f5f5f">News
+                                </a>
+                            </span>
+                        </li>
+                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
+                            <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
+                                data-once="js-coh-menu-item-link-init">
+                                <a href="{{ route('getInterviews') }}" style="color:#5f5f5f">Interviews
+                                </a>
+                            </span>
+                        </li>
+                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
+                            <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
+                                data-once="js-coh-menu-item-link-init">
+                                <a href="{{ route('getEvents') }}" style="color:#5f5f5f">Events
+                                </a>
+                            </span>
+                        </li>
+                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
+                            <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
+                                data-once="js-coh-menu-item-link-init">
+                                <a href="{{ route('getAboutMe') }}" style="color:#5f5f5f">About
+                                </a>
+                            </span>
+                        </li>
+                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
+                            <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
+                                data-once="js-coh-menu-item-link-init">
+                                <a href="{{ route('getContactMe') }}" style="color:#5f5f5f">Contact
+                                </a>
+                            </span>
                         </li>
                     </ul>
                     <div class="coh-container coh-ce-cpt_site_header-dc73e60b">
