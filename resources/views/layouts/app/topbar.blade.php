@@ -70,56 +70,58 @@
                         <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
                             <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
                                 data-once="js-coh-menu-item-link-init">
-                                <a href="{{ route('getArticles') }}" style="color:#5f5f5f">Articles
+                                <a href="{{ route('getArticles') }}" style="color: black; font-weight: 400;">Articles
                                 </a>
                             </span>
                         </li>
                         <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
                             <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
                                 data-once="js-coh-menu-item-link-init">
-                                <a href="{{ route('getReports') }}" style="color:#5f5f5f">Reports
+                                <a href="{{ route('getReports') }}" style="color: black; font-weight: 400;">Reports
                                 </a>
                             </span>
                         </li>
                         <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
                             <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
                                 data-once="js-coh-menu-item-link-init">
-                                <a href="{{ route('getPresentations') }}" style="color:#5f5f5f">Presentations
+                                <a href="{{ route('getPresentations') }}"
+                                    style="color: black; font-weight: 400;">Presentations
                                 </a>
                             </span>
                         </li>
                         <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
                             <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
                                 data-once="js-coh-menu-item-link-init">
-                                <a href="{{ route('getNews') }}" style="color:#5f5f5f">News
+                                <a href="{{ route('getNews') }}" style="color: black; font-weight: 400;">News
                                 </a>
                             </span>
                         </li>
                         <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
                             <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
                                 data-once="js-coh-menu-item-link-init">
-                                <a href="{{ route('getInterviews') }}" style="color:#5f5f5f">Interviews
+                                <a href="{{ route('getInterviews') }}"
+                                    style="color: black; font-weight: 400;">Interviews
                                 </a>
                             </span>
                         </li>
                         <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
                             <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
                                 data-once="js-coh-menu-item-link-init">
-                                <a href="{{ route('getEvents') }}" style="color:#5f5f5f">Events
+                                <a href="{{ route('getEvents') }}" style="color: black; font-weight: 400;">Events
                                 </a>
                             </span>
                         </li>
                         <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
                             <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
                                 data-once="js-coh-menu-item-link-init">
-                                <a href="{{ route('getAboutMe') }}" style="color:#5f5f5f">About
+                                <a href="{{ route('getAboutMe') }}" style="color: black; font-weight: 400;">About
                                 </a>
                             </span>
                         </li>
                         <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
                             <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
                                 data-once="js-coh-menu-item-link-init">
-                                <a href="{{ route('getContactMe') }}" style="color:#5f5f5f">Contact
+                                <a href="{{ route('getContactMe') }}" style="color: black; font-weight: 400;">Contact
                                 </a>
                             </span>
                         </li>

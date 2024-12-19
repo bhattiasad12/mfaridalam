@@ -16,7 +16,7 @@ class NewsController extends Controller
     public function index()
     {
         $pageName = 'News List'; // Set a page name
-        $data = News::all(); // Fetch all articles from the database
+        $data = News::orderBy('id', 'desc')->paginate(10);
         return view('news.index', compact('pageName', 'data'));
     }
 
@@ -36,7 +36,7 @@ class NewsController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:10048',
         ]);
 
         $folderName = 'uploads/news/' . Str::slug($request->name) . '_' . time();
@@ -101,8 +101,9 @@ class NewsController extends Controller
     public function getNews()
     {
         $pageName = 'News';
+        $data = News::orderBy('id', 'desc')->get();
 
-        return view('news', compact('pageName'));
+        return view('news', compact('pageName', 'data'));
     }
 
     public function download($id)

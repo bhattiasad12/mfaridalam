@@ -3,18 +3,6 @@
 @section('content')
     @push('css')
         <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f9f9f9;
-                color: #333;
-            }
-
             .custom-container {
                 max-width: 1200px;
                 margin: 20px auto;
@@ -191,7 +179,7 @@
 
                             <div
                                 class="coh-container ssa-component coh-component ssa-component-instance-5c81f785-6a71-4793-975b-c25f42c26402 coh-component-instance-5c81f785-6a71-4793-975b-c25f42c26402 match-height      ssa-instance-40869572dc601e75ba24ccd4877c87d3 coh-ce-cpt_container-ba3cd04b">
-                                <div class="coh-container coh-ce-cpt_container-fe57b20b coh-container-boxed">
+                                <div class="coh-container coh-ce-cpt_container-fe57b20b coh-container-boxed" id="table">
                                     <h2 class="coh-heading ssa-component coh-component ssa-component-instance-d7032d65-00b4-4d4c-b659-eb632d58d0cb coh-component-instance-d7032d65-00b4-4d4c-b659-eb632d58d0cb  dark-heading align-text-left coh-style-cfa-margin-top-lg  ssa-instance-177f0c499a6f4f7476f53009d5491bb7 coh-ce-cpt_heading-b45c50fc"
                                         style="padding:4rem 0 4rem 0">
                                         Browse all {{ $pageName }} </h2>
@@ -212,6 +200,10 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div style="padding:2rem 0">
+                                        {{ $data->links('vendor.pagination.default') }}
+                                    </div>
+
 
                                     <!-- Modal -->
                                     <div class="custom-modal" id="customVideoModal">

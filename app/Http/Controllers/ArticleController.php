@@ -16,7 +16,7 @@ class ArticleController extends Controller
     public function index()
     {
         $pageName = 'Articles List'; // Set a page name
-        $data = Article::all(); // Fetch all articles from the database
+        $data = Article::orderBy('id', 'desc')->paginate(10);
 
         return view('articles.index', compact('pageName', 'data'));
     }
@@ -37,7 +37,7 @@ class ArticleController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:10048',
         ]);
 
         // Create a unique folder name based on article name and timestamp
@@ -108,8 +108,10 @@ class ArticleController extends Controller
     public function getArticles()
     {
         $pageName = 'Articles';
+        // $data = Article::all();
+        $data = Article::orderBy('id', 'desc')->get();
 
-        return view('articles', compact('pageName'));
+        return view('articles', compact('pageName', 'data'));
     }
 
     public function download($id)

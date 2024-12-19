@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/down', function () {
+Route::get('/asad', function () {
     // Check if the application is currently in maintenance mode
     if (app()->isDownForMaintenance()) {
         // Bring the application back up

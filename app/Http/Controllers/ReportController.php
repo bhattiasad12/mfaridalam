@@ -16,7 +16,7 @@ class ReportController extends Controller
     public function index()
     {
         $pageName = 'Reports List';
-        $data = Report::all(); 
+        $data = Report::orderBy('id', 'desc')->paginate(10);
         return view('reports.index', compact('pageName', 'data'));
     }
 
@@ -35,7 +35,7 @@ class ReportController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:10048',
         ]);
 
         $folderName = 'uploads/reports/' . Str::slug($request->name) . '_' . time();
@@ -97,12 +97,13 @@ class ReportController extends Controller
 
         return redirect()->route('reports.index')->with('success', 'Reports and file deleted successfully!');
     }
-    
+
     public function getReports()
     {
         $pageName = 'Reports';
+        $data = Report::orderBy('id', 'desc')->get();
 
-        return view('reports', compact('pageName'));
+        return view('reports', compact('pageName', 'data'));
     }
 
     public function download($id)

@@ -127,9 +127,11 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-
                                     </tbody>
                                 </table>
+                                <div class="row">
+                                    {{ $data->links() }}
+                                </div>
                             @endif
                             <!--end::Table container-->
                         </div>

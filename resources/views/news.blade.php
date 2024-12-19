@@ -54,19 +54,15 @@
                                                     class="coh-column ssa-instance-46b0422ff4e7b025fa0ca43008caaaf0 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-7 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
                                                     <div class="coh-container coh-ce-cpt_hero_banner-f2668b67">
                                                         <picture>
-                                                            <source
-                                                                data-srcset="{{ asset('assets/images/news.avif') }}"
+                                                            <source data-srcset="{{ asset('assets/images/news.avif') }}"
                                                                 media="(min-width: 900px)" type="">
-                                                            <source
-                                                                data-srcset="{{ asset('assets/images/news.avif') }}"
+                                                            <source data-srcset="{{ asset('assets/images/news.avif') }}"
                                                                 media="(min-width: 600px) and (max-width: 899px)"
                                                                 type="">
-                                                            <source
-                                                                data-srcset="{{ asset('assets/images/news.avif') }}"
+                                                            <source data-srcset="{{ asset('assets/images/news.avif') }}"
                                                                 media="(max-width: 599px)" type="">
                                                             <img class="coh-image ssa-component coh-component coh-image-responsive-xl coh-image-responsive-sm coh-image-responsive-ps  coh-style-object-fit "
-                                                                loading="eager"
-                                                                src="{{ asset('assets/images/news.avif') }}"
+                                                                loading="eager" src="{{ asset('assets/images/news.avif') }}"
                                                                 alt="Reading on laptop">
                                                         </picture>
 
@@ -80,24 +76,31 @@
 
                             <div
                                 class="coh-container ssa-component coh-component ssa-component-instance-5c81f785-6a71-4793-975b-c25f42c26402 coh-component-instance-5c81f785-6a71-4793-975b-c25f42c26402 match-height      ssa-instance-40869572dc601e75ba24ccd4877c87d3 coh-ce-cpt_container-ba3cd04b">
-                                <div class="coh-container coh-ce-cpt_container-fe57b20b coh-container-boxed">
+                                <div class="coh-container coh-ce-cpt_container-fe57b20b coh-container-boxed" style="margin-bottom: 4rem;">
                                     <h2 class="coh-heading ssa-component coh-component ssa-component-instance-d7032d65-00b4-4d4c-b659-eb632d58d0cb coh-component-instance-d7032d65-00b4-4d4c-b659-eb632d58d0cb  dark-heading align-text-left coh-style-cfa-margin-top-lg  ssa-instance-177f0c499a6f4f7476f53009d5491bb7 coh-ce-cpt_heading-b45c50fc"
                                         style="padding:4rem 0 4rem 0">
-                                        Browse all {{$pageName}} </h2>
+                                        Browse all {{ $pageName }} </h2>
                                     <table id="example" class="stripe" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>details</th>
-                                                <th>Date</th>
+                                                <th>Action</th>
+                                                {{-- <th>Date</th> --}}
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>Market-Based Valuation: Price and Enterprise Value Multiples</td>
-                                                <td>12-12-12</td>
-                                            </tr>
+                                            @if ($data->isEmpty())
+                                                <p>No records found.</p>
+                                            @else
+                                                @foreach ($data as $value)
+                                                    <tr>
+                                                        <td style="width:80%">{{ $value->name }}</td>
+                                                        <td style="width:20%"><a href="{{ $value->path }}"
+                                                                target="_blank">View</a></td>
+                                                        {{-- <td>12-12-12</td> --}}
+                                                    </tr>
+                                                @endforeach
+                                            @endif
                                         </tbody>
                                     </table>
                                 </div>
@@ -113,6 +116,12 @@
 @push('scripts')
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script>
-        new DataTable('#example');
+        $('#example').DataTable({
+            columnDefs: [{
+                width: '90%',
+                targets: 0
+            }],
+            responsive: true
+        });
     </script>
 @endpush

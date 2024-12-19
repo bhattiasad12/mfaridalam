@@ -15,7 +15,7 @@ class InterviewController extends Controller
     {
         $pageName = '';
 
-        $data = Interview::all();
+        $data = Interview::orderBy('id', 'desc')->paginate(10);
         return view('interviews.index', compact('pageName', 'data'));
     }
 
@@ -84,9 +84,10 @@ class InterviewController extends Controller
 
     public function getInterviews()
     {
+
         $pageName = 'Interviews';
 
-        $data = Interview::all();
+        $data = Interview::orderBy('id', 'desc')->paginate(6)->fragment('table');
 
         return view('interviews', compact('pageName', 'data'));
     }

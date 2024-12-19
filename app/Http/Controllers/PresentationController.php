@@ -16,7 +16,7 @@ class PresentationController extends Controller
     public function index()
     {
         $pageName = 'Presentations List'; // Set a page name
-        $data = Presentation::all(); // Fetch all articles from the database
+        $data = Presentation::orderBy('id', 'desc')->paginate(10);
         return view('presentations.index', compact('pageName', 'data'));
     }
 
@@ -35,7 +35,7 @@ class PresentationController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:10048',
         ]);
 
         $folderName = 'uploads/presentations/' . Str::slug($request->name) . '_' . time();
@@ -100,16 +100,17 @@ class PresentationController extends Controller
     public function getPresentations()
     {
         $pageName = 'Presentations';
+        $data = Presentation::orderBy('id', 'desc')->get();
 
-        return view('presentations', compact('pageName'));
+        return view('presentations', compact('pageName', 'data'));
     }
 
     public function download($id)
     {
         $resource = Presentation::findOrFail($id);
 
-        $filePath = public_path($resource->path); 
-        $originalFileName = basename($resource->path); 
+        $filePath = public_path($resource->path);
+        $originalFileName = basename($resource->path);
 
         if (file_exists($filePath)) {
             return response()->download($filePath, $originalFileName);
