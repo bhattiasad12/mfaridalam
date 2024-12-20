@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Visit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class EventController extends Controller
 {
@@ -14,7 +16,9 @@ class EventController extends Controller
     public function index()
     {
         $pageName = '';
-        return view('events.index', compact('pageName'));
+        $data = Event::orderBy('id', 'desc')->paginate(10);
+
+        return view('events.index', compact('pageName', 'data'));
     }
 
 
@@ -23,17 +27,58 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('events.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request) {}
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'file.*' => 'required|image|mimes:jpg,jpeg,png|max:10048',
+        ]);
+    
+        // Create the event
+        $event = Event::create([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
+    
+        // Create a unique folder name based on event name and timestamp
+        $folderName = 'uploads/events/' . Str::slug($request->name) . '_' . time(); // Unique folder name
+        $directory = public_path($folderName); // Full directory path
+    
+        // Ensure the directory exists
+        if (!File::exists($directory)) {
+            File::makeDirectory($directory, 0755, true);
+        }
+    
+        if ($request->hasFile('file')) {
+            foreach ($request->file('file') as $image) {
+                // Get the original file name
+                $originalFileName = $image->getClientOriginalName();
+    
+                // Store the file in the unique folder
+                $image->move($directory, $originalFileName);
+    
+                // Store the relative path in the database
+                $relativePath = $folderName . '/' . $originalFileName;
+    
+                // Save image details in the event_images table
+                $event->images()->create([
+                    'image_name' => $originalFileName,
+                    'image_path' => $relativePath, // Save relative path
+                ]);
+            }
+        }
+    
+        return response()->json([
+            'message' => 'Event created successfully!',
+            'event' => $event,
+        ]);
+    }
+    
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Event $event)
     {
         //
@@ -60,14 +105,22 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        // Delete the article record from the database
+        $event->delete();
+
+        return redirect()->route('events.index')->with('success', 'event and file deleted successfully!');
     }
 
     public function getEvents()
     {
         $pageName = 'Event Detail';
+        $data = Event::with('images')->orderBy('id', 'desc')->paginate(10);
+        // $data = Event::with(['images' => function ($query) {
+        //     $query->take(1);
+        // }])->orderBy('id', 'desc')->paginate(10);
 
-        return view('events', compact('pageName'));
+        // dd($data[0] );
+        return view('events', compact('pageName', 'data'));
     }
 
     public function eventDetail()
