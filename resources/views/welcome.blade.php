@@ -62,13 +62,15 @@
                                 class="coh-container ssa-component coh-component ssa-component-instance-04eaeaad-a4a1-41d7-8ea7-7cc1e9fc65ba coh-component-instance-04eaeaad-a4a1-41d7-8ea7-7cc1e9fc65ba  triple-links--dark ssa-instance-e5fc42cb7d55235acc3263df69d96800 coh-ce-cpt_newsfeed-28c8b2b">
                                 <div class="coh-container  coh-ce-cpt_newsfeed-5d6b4da7 coh-container-boxed"><span
                                         class="coh-inline-element link__label coh-style-headline-heavy friendly-quotes"
-                                        style="color: white;font-size: 1rem;padding: 4rem; line-height: inherit;font-size: larger;">
-                                        "KEEP YOUR DREAMS ALIVE. UNDERSTAND, TO ACHIEVE ANYTHING REQUIRES FAITH AND BELIEF
-                                        IN YOURSELF, VISION, HARD WORK, DETERMINATION, AND DEDICATION. REMEMBER ALL THINGS
-                                        ARE POSSIBLE FOR THOSE WHO BELIEVE" (DEVERS).
-                                        THIS IS ESSENTIALLY ALL THE ATTRIBUTES I HAVE BANKED UPON TO ACCOMPLISH MY GOALS. IN
-                                        THE MOST TRYING HOURS OF MY LIFE I HAVE CLING ON TO THE SLIGHTEST BIT OF HOPE TO
-                                        RUN, WALK OR INCH UP TOWARDS MY GOALS."
+                                        style="color: white;font-size: 1rem;padding: 4rem; line-height: inherit;font-size: x-large;">
+                                        Keep your dreams alive. Understand that achieving anything requires faith and belief
+                                        in yourself, vision, hard work, determination, and dedication. Remember, all things
+                                        are possible for those who believe. (Devers)
+                                        <br />
+                                        <br />
+                                        These are the very attributes I have relied upon to accomplish my goals. In the most
+                                        trying moments of my life, I have clung to the slightest bit of hope to run, walk,
+                                        or inch my way toward my dreams.
                                     </span>
                                 </div>
                             </div>

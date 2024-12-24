@@ -44,10 +44,10 @@
 
 
             .viewer-image {
-                max-width: 100%;
+                max-width: 80%;
                 max-height: 80%;
                 border-radius: 8px;
-                margin: 0 auto;
+                margin: 20px auto;
             }
 
             .viewer-caption {
