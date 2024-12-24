@@ -77,7 +77,8 @@
 
                             <div
                                 class="coh-container ssa-component coh-component ssa-component-instance-5c81f785-6a71-4793-975b-c25f42c26402 coh-component-instance-5c81f785-6a71-4793-975b-c25f42c26402 match-height      ssa-instance-40869572dc601e75ba24ccd4877c87d3 coh-ce-cpt_container-ba3cd04b">
-                                <div class="coh-container coh-ce-cpt_container-fe57b20b coh-container-boxed" style="margin-bottom: 4rem;">
+                                <div class="coh-container coh-ce-cpt_container-fe57b20b coh-container-boxed"
+                                    style="margin-bottom: 4rem;">
                                     <h2 class="coh-heading ssa-component coh-component ssa-component-instance-d7032d65-00b4-4d4c-b659-eb632d58d0cb coh-component-instance-d7032d65-00b4-4d4c-b659-eb632d58d0cb  dark-heading align-text-left coh-style-cfa-margin-top-lg  ssa-instance-177f0c499a6f4f7476f53009d5491bb7 coh-ce-cpt_heading-b45c50fc"
                                         style="padding:4rem 0 4rem 0">
                                         {{-- Browse all {{ $pageName }}  --}}
@@ -85,24 +86,24 @@
                                     <table id="example" class="stripe" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Action</th>
+                                                <th style="width:80%; text-align: left;">Name</th>
+                                                <th style="text-align: left;">Action</th>
                                                 {{-- <th>Date</th> --}}
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            @if ($data->isEmpty())
-                                                <p>No records found.</p>
-                                            @else
-                                                @foreach ($data as $value)
-                                                    <tr>
-                                                        <td style="width:80%">{{ $value->name }}</td>
-                                                        <td style="width:20%"><a href="{{ $value->path }}"
-                                                                target="_blank">View</a></td>
-                                                        {{-- <td>12-12-12</td> --}}
-                                                    </tr>
-                                                @endforeach
-                                            @endif
+                                        <tbody id="list">
+                                            @foreach ($data as $value)
+                                                <tr>
+                                                    <td style="width:80%">{{ @$value->name }}</td>
+                                                    <td style="width:20%"><a href="{{ @$value->path }}"
+                                                            target="_blank">View</a></td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                        <tbody id="loader" style="display: none;">
+                                            <tr>
+                                                <td colspan="2" style="text-align: center;">Loading...</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -110,20 +111,38 @@
                         </div>
                     </div>
                 </article>
-
             </div>
         </div>
     </div>
 @endsection
 @push('scripts')
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script>
-        $('#example').DataTable({
-            columnDefs: [{
-                width: '90%',
-                targets: 0
-            }],
-            responsive: true
+        $(document).ready(function() {
+            let nextPageUrl = '{{ $data->nextPageUrl() }}';
+            let isLoading = false;
+
+            $(window).scroll(function() {
+                if ($(window).scrollTop() + $(window).height() >= $(document).height() - 200 &&
+                    nextPageUrl && !isLoading) {
+                    isLoading = true;
+                    $('#loader').show();
+
+                    $.ajax({
+                        url: nextPageUrl,
+                        type: 'GET',
+                        success: function(response) {
+                            $('#list').append(response.data);
+                            nextPageUrl = response.next_page_url;
+                            isLoading = false;
+                            $('#loader').hide();
+                        },
+                        error: function() {
+                            isLoading = false;
+                            $('#loader').hide();
+                        }
+                    });
+                }
+            });
         });
     </script>
 @endpush

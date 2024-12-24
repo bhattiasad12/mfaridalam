@@ -7,7 +7,7 @@
             .modal-description {
                 font-size: 16px;
                 color: #555;
-                margin-bottom: 20px;
+                margin: 0 2rem 2rem 2rem;
             }
 
             .image-viewer {
@@ -41,7 +41,6 @@
                 align-items: center;
                 margin: auto;
             }
-
 
             .viewer-image {
                 max-width: 80%;
@@ -114,6 +113,10 @@
                 margin: 16px;
                 padding: 16px;
                 transition: box-shadow 0.3s;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
             }
 
             .event-card:hover {
@@ -122,6 +125,7 @@
 
             .event-card-content {
                 text-align: center;
+                flex-grow: 1;
             }
 
             .event-title {
@@ -147,6 +151,31 @@
             .event-image:hover {
                 transform: scale(1.05);
             }
+
+            .card-media {
+                position: relative;
+                width: 100%;
+                padding-top: 56.25%;
+                /* 16:9 aspect ratio (height = 9/16 * 100) */
+                overflow: hidden;
+                border-radius: 8px 8px 0 0;
+                background-color: #f0f0f0;
+                /* Placeholder background for empty spaces */
+            }
+
+            .card-media img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top;
+                /* object-fit: contain; */
+                /* Ensures the image fills the container without distortion */
+                border-radius: inherit;
+            }
+
 
             /* Custom Modal Styles */
             .custom-modal {
@@ -238,6 +267,16 @@
                     opacity: 1;
                 }
             }
+
+            .custom-loader {
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            .custom-loader img {
+                width: 50px;
+                height: 50px;
+            }
         </style>
     @endpush
     <div class="coh-container coh-style-focusable-content coh-style-paragraph-100 coh-ce-bfd264e3" id="main-content">
@@ -322,8 +361,8 @@
                                         <div class="coh-container ">
                                             <div class="coh-row coh-row-xl coh-row-visible-xl"
                                                 data-coh-row-match-heights="[]" data-once="coh-row-match-heights-init">
-                                                <div
-                                                    class="coh-row-inner ssa-instance-210c8a7d219d405adb90a2ef9fb7a615 coh-ce-cpt_3_column_layout-a702800b">
+                                                <div id="event-container"
+                                                    class="custom-video-grid coh-row-inner ssa-instance-210c8a7d219d405adb90a2ef9fb7a615 coh-ce-cpt_3_column_layout-a702800b">
                                                     @if ($data->isEmpty())
                                                         <p>No events found.</p>
                                                     @else
@@ -378,7 +417,8 @@
                                                                     onclick="closeModal('{{ $value->id }}')"></div>
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title">{{ $value->name }}</h5>
+                                                                        <h5 class="modal-title">{{ $value->name }}
+                                                                        </h5>
                                                                         <span class="modal-close"
                                                                             onclick="closeModal('{{ $value->id }}')">&times;</span>
                                                                     </div>
@@ -398,26 +438,28 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-
-                                                            <!-- Fullscreen Image Viewer -->
-                                                            <div class="image-viewer" id="image-viewer">
-                                                                <div class="image-viewer-overlay"
-                                                                    onclick="closeImageViewer()"></div>
-                                                                <div class="image-viewer-content">
-                                                                    <span class="image-viewer-close"
-                                                                        onclick="closeImageViewer()">&times;</span>
-                                                                    <img id="viewer-image" class="viewer-image"
-                                                                        src="" alt="">
-                                                                    <p id="viewer-caption" class="viewer-caption"></p>
-                                                                    <div class="image-viewer-nav">
-                                                                        <button class="viewer-prev"
-                                                                            onclick="prevImage()">&lt;</button>
-                                                                        <button class="viewer-next"
-                                                                            onclick="nextImage()">&gt;</button>
-                                                                    </div>
+                                                        @endforeach
+                                                        <!-- Fullscreen Image Viewer -->
+                                                        <div class="image-viewer" id="image-viewer">
+                                                            <div class="image-viewer-overlay" onclick="closeImageViewer()">
+                                                            </div>
+                                                            <div class="image-viewer-content">
+                                                                <span class="image-viewer-close"
+                                                                    onclick="closeImageViewer()">&times;</span>
+                                                                <img id="viewer-image" class="viewer-image"
+                                                                    src="" alt="">
+                                                                <p id="viewer-caption" class="viewer-caption"></p>
+                                                                <div class="image-viewer-nav">
+                                                                    <button class="viewer-prev"
+                                                                        onclick="prevImage()">&lt;</button>
+                                                                    <button class="viewer-next"
+                                                                        onclick="nextImage()">&gt;</button>
                                                                 </div>
                                                             </div>
-                                                        @endforeach
+                                                        </div>
+                                                        <div class="custom-loader" id="customLoader"
+                                                            style="display: none;">Loading
+                                                        </div>
                                                     @endif
 
                                                 </div>
@@ -435,7 +477,6 @@
     </div>
 @endsection
 @push('scripts')
-    {{-- <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script> --}}
     <script>
         // Open Image Viewer
         function viewImage(imageSrc, imageAlt) {
@@ -526,5 +567,48 @@
                 index: index,
             }));
         }
+    </script>
+    <script>
+        let nextPageUrl = "{{ $data->nextPageUrl() }}"; // Initial next page URL
+        let isLoading = false;
+
+        window.addEventListener('scroll', () => {
+            if (isLoading || !nextPageUrl) return;
+
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const bottomPosition = document.body.offsetHeight;
+
+            if (scrollPosition >= bottomPosition - 250) { // Load more when close to the bottom
+                isLoading = true;
+                document.getElementById('customLoader').style.display = 'block';
+
+                fetch(nextPageUrl, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('customLoader').style.display = 'none';
+
+                        // Append new events
+                        const eventContainer = document.getElementById('event-container');
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = data.data; // Rendered HTML from the controller
+                        while (tempDiv.firstChild) {
+                            eventContainer.appendChild(tempDiv.firstChild);
+                        }
+
+                        // Update the next page URL
+                        nextPageUrl = data.nextPageUrl;
+                        isLoading = false;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching events:', error);
+                        document.getElementById('customLoader').style.display = 'none';
+                        isLoading = false;
+                    });
+            }
+        });
     </script>
 @endpush

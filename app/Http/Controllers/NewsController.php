@@ -98,10 +98,19 @@ class NewsController extends Controller
         return redirect()->route('news.index')->with('success', 'news and file deleted successfully!');
     }
 
-    public function getNews()
+    public function getNews(Request $request)
     {
         $pageName = 'News';
-        $data = News::orderBy('id', 'desc')->get();
+
+        if ($request->ajax()) {
+            $data = News::orderBy('id', 'desc')->paginate(10);
+            return response()->json([
+                'data' => view('partials.news-list', compact('data'))->render(),
+                'next_page_url' => $data->nextPageUrl()
+            ]);
+        }
+
+        $data = News::orderBy('id', 'desc')->paginate(10);
 
         return view('news', compact('pageName', 'data'));
     }

@@ -86,27 +86,27 @@
                                         style="padding:4rem 0 4rem 0">
                                         {{-- Browse all {{ $pageName }}  --}}
                                     </h2>
-                                    <table id="example" class="stripe" style="width:100%; ">
+                                    <table id="example" class="stripe" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Action</th>
+                                                <th style="width:80%; text-align: left;">Name</th>
+                                                <th style="text-align: left;">Action</th>
                                                 {{-- <th>Date</th> --}}
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            @if ($data->isEmpty())
-                                                <p>No records found.</p>
-                                            @else
-                                                @foreach ($data as $value)
-                                                    <tr>
-                                                        <td style="width:80%">{{ $value->name }}</td>
-                                                        <td style="width:20%"><a href="{{ $value->path }}"
-                                                                target="_blank">View</a></td>
-                                                        {{-- <td>12-12-12</td> --}}
-                                                    </tr>
-                                                @endforeach
-                                            @endif
+                                        <tbody id="list">
+                                            @foreach ($data as $value)
+                                                <tr>
+                                                    <td style="width:80%">{{ @$value->name }}</td>
+                                                    <td style="width:20%"><a href="{{ @$value->path }}"
+                                                            target="_blank">View</a></td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                        <tbody id="loader" style="display: none;">
+                                            <tr>
+                                                <td colspan="2" style="text-align: center;">Loading...</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -120,14 +120,33 @@
     </div>
 @endsection
 @push('scripts')
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
-    <script>
-        $('#example').DataTable({
-            columnDefs: [{
-                width: '90%',
-                targets: 0
-            }],
-            responsive: true
+<script>
+    $(document).ready(function() {
+        let nextPageUrl = '{{ $data->nextPageUrl() }}';
+        let isLoading = false;
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() + $(window).height() >= $(document).height() - 200 &&
+                nextPageUrl && !isLoading) {
+                isLoading = true;
+                $('#loader').show();
+
+                $.ajax({
+                    url: nextPageUrl,
+                    type: 'GET',
+                    success: function(response) {
+                        $('#list').append(response.data);
+                        nextPageUrl = response.next_page_url;
+                        isLoading = false;
+                        $('#loader').hide();
+                    },
+                    error: function() {
+                        isLoading = false;
+                        $('#loader').hide();
+                    }
+                });
+            }
         });
-    </script>
+    });
+</script>
 @endpush

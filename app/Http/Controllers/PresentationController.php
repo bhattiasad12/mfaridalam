@@ -97,10 +97,19 @@ class PresentationController extends Controller
         return redirect()->route('presentations.index')->with('success', 'presentations and file deleted successfully!');
     }
 
-    public function getPresentations()
+    public function getPresentations(Request $request)
     {
         $pageName = 'Presentations';
-        $data = Presentation::orderBy('id', 'desc')->get();
+        
+        if ($request->ajax()) {
+            $data = Presentation::orderBy('id', 'desc')->paginate(10);
+            return response()->json([
+                'data' => view('partials.presentation-list', compact('data'))->render(),
+                'next_page_url' => $data->nextPageUrl()
+            ]);
+        }
+
+        $data = Presentation::orderBy('id', 'desc')->paginate(10);
 
         return view('presentations', compact('pageName', 'data'));
     }

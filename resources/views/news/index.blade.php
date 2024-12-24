@@ -42,9 +42,8 @@
                             <span class="card-label fw-bold fs-3 mb-1"></span>
                         </h3>
                         <div class="card-toolbar">
-                            <button onclick="create('news/create', 'Create News')"
-                                class="btn btn-sm btn-light-primary" data-kt-drawer-show="true"
-                                data-kt-drawer-target="#kt_drawer_example_permanent"><i
+                            <button onclick="create('news/create', 'Create News')" class="btn btn-sm btn-light-primary"
+                                data-kt-drawer-show="true" data-kt-drawer-target="#kt_drawer_example_permanent"><i
                                     class="ki-duotone ki-plus fs-2"></i>News</button>
                         </div>
                     </div>
@@ -66,8 +65,8 @@
                                             </th>
                                             <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="1"
                                                 rowspan="1" colspan="1" aria-label="User: Activate to sort"
-                                                tabindex="0"><span class="dt-column-title"
-                                                    role="button">News</span><span class="dt-column-order"></span></th>
+                                                tabindex="0"><span class="dt-column-title" role="button">News</span><span
+                                                    class="dt-column-order"></span></th>
                                             {{-- <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="3"
                                             rowspan="1" colspan="1" aria-label="Role: Activate to sort"
                                             tabindex="0"><span class="dt-column-title" role="button">Date</span><span
@@ -130,6 +129,7 @@
 
                                     </tbody>
                                 </table>
+                                {{ $data->links() }}
                             @endif
                             <!--end::Table container-->
                         </div>

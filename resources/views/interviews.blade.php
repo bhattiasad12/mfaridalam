@@ -231,14 +231,15 @@
         const customCloseModal = document.getElementById('customCloseModal');
         const customVideoCards = document.querySelectorAll('.custom-video-card');
 
-        customVideoCards.forEach(card => {
-            card.addEventListener('click', () => {
+        document.querySelector('.custom-video-grid').addEventListener('click', (event) => {
+            const card = event.target.closest('.custom-video-card');
+            if (card) {
                 const videoId = card.getAttribute('data-video-id');
                 customIframe.src = `https://www.youtube.com/embed/${videoId}`;
                 customModal.classList.add('active');
-            });
+            }
         });
-
+        
         customCloseModal.addEventListener('click', () => {
             customIframe.src = '';
             customModal.classList.remove('active');

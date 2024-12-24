@@ -134,6 +134,7 @@
 
                                     </tbody>
                                 </table>
+                                {{ $data->links() }}
                             @endif
                         </div>
                         <!--end::Table container-->

@@ -72,8 +72,9 @@
                                                     class="dt-column-order"></span></th>
                                             <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="1"
                                                 rowspan="1" colspan="1" aria-label="User: Activate to sort"
-                                                tabindex="0"><span class="dt-column-title" role="button">Description</span><span
-                                                    class="dt-column-order"></span></th>
+                                                tabindex="0"><span class="dt-column-title"
+                                                    role="button">Description</span><span class="dt-column-order"></span>
+                                            </th>
                                             <th class="text-end min-w-100px dt-orderable-none" data-dt-column="4"
                                                 rowspan="1" colspan="1" aria-label="Actions"><span
                                                     class="dt-column-title">Actions</span><span
@@ -98,7 +99,8 @@
                                                 <td>
                                                     <div class="d-flex flex-column">
                                                         <span
-                                                            class="text-gray-800 text-hover-primary mb-1">{{ @$value->description }}</span>
+                                                            class="text-gray-800 text-hover-primary mb-1">{{ Str::limit(@$value->description, 100, '...') }}
+                                                        </span>
                                                     </div>
                                                 </td>
 
@@ -129,9 +131,9 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-
                                     </tbody>
                                 </table>
+                                {{ $data->links() }}
                             @endif
                         </div>
                         <!--end::Table container-->

@@ -105,11 +105,19 @@ class ArticleController extends Controller
         return redirect()->route('articles.index')->with('success', 'Article and file deleted successfully!');
     }
 
-    public function getArticles()
+    public function getArticles(Request $request)
     {
         $pageName = 'Articles';
-        // $data = Article::all();
-        $data = Article::orderBy('id', 'desc')->get();
+
+        if ($request->ajax()) {
+            $data = Article::orderBy('id', 'desc')->paginate(10);
+            return response()->json([
+                'data' => view('partials.article-list', compact('data'))->render(),
+                'next_page_url' => $data->nextPageUrl()
+            ]);
+        }
+
+        $data = Article::orderBy('id', 'desc')->paginate(10);
 
         return view('articles', compact('pageName', 'data'));
     }

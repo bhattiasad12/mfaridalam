@@ -98,10 +98,18 @@ class ReportController extends Controller
         return redirect()->route('reports.index')->with('success', 'Reports and file deleted successfully!');
     }
 
-    public function getReports()
+    public function getReports(Request $request)
     {
         $pageName = 'Reports';
-        $data = Report::orderBy('id', 'desc')->get();
+        if ($request->ajax()) {
+            $data = Report::orderBy('id', 'desc')->paginate(10);
+            return response()->json([
+                'data' => view('partials.report-list', compact('data'))->render(),
+                'next_page_url' => $data->nextPageUrl()
+            ]);
+        }
+
+        $data = Report::orderBy('id', 'desc')->paginate(10);
 
         return view('reports', compact('pageName', 'data'));
     }

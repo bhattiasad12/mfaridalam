@@ -42,9 +42,8 @@
                             <span class="card-label fw-bold fs-3 mb-1"></span>
                         </h3>
                         <div class="card-toolbar">
-                            <button onclick="create('reports/create', 'Create Report')"
-                                class="btn btn-sm btn-light-primary" data-kt-drawer-show="true"
-                                data-kt-drawer-target="#kt_drawer_example_permanent"><i
+                            <button onclick="create('reports/create', 'Create Report')" class="btn btn-sm btn-light-primary"
+                                data-kt-drawer-show="true" data-kt-drawer-target="#kt_drawer_example_permanent"><i
                                     class="ki-duotone ki-plus fs-2"></i>New Reports</button>
                         </div>
                     </div>
@@ -130,6 +129,7 @@
 
                                     </tbody>
                                 </table>
+                                {{ $data->links() }}
                             @endif
                             <!--end::Table container-->
                         </div>
