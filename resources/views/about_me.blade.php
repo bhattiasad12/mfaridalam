@@ -218,8 +218,8 @@
                             <div
                                 class="coh-container ssa-component coh-component ssa-component-instance-04eaeaad-a4a1-41d7-8ea7-7cc1e9fc65ba coh-component-instance-04eaeaad-a4a1-41d7-8ea7-7cc1e9fc65ba  triple-links--dark ssa-instance-e5fc42cb7d55235acc3263df69d96800 coh-ce-cpt_newsfeed-28c8b2b">
                                 <div class="coh-container  coh-ce-cpt_newsfeed-5d6b4da7 coh-container-boxed">
-                                    <h3 class="coh-inline-element link__label coh-style-headline-heavy coh-style-headline-500"
-                                        style="color: white;padding: 4rem 0;">
+                                    <h3 class="coh-inline-element link__label coh-style-headline-heavy coh-style-headline-500 friendly-quotes"
+                                        style="color: white;padding: 4rem 0; font-size: xx-large">
                                         "Strange how much
                                         you have to know"
                                         before you know
@@ -279,7 +279,7 @@
                                                         class="coh-column ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
 
                                                         <img src="{{ asset('assets/images/932ec226-3d75-434c-b9a5-3172d235a209.avif') }}"
-                                                            alt="" style="border:  8px solid #224366;">
+                                                            alt="" style="border:  8px solid #fff;">
                                                     </div>
                                                 </div>
                                             </div>

@@ -85,9 +85,9 @@ class InterviewController extends Controller
     public function getInterviews()
     {
 
-        $pageName = 'Interviews';
+        $pageName = 'INTERVIEWS';
 
-        $data = Interview::orderBy('id', 'desc')->paginate(6)->fragment('table');
+        $data = Interview::orderBy('id', 'desc')->paginate(16)->fragment('table');
 
         return view('interviews', compact('pageName', 'data'));
     }

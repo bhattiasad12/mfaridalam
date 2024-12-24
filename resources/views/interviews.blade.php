@@ -11,8 +11,8 @@
 
             .custom-video-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 20px;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 16px;
             }
 
             .custom-video-card {
@@ -31,7 +31,7 @@
 
             .custom-video-card img {
                 width: 100%;
-                height: 199px;
+                height: 150px;
                 object-fit: cover;
             }
 
@@ -40,19 +40,13 @@
             }
 
             .custom-video-card .custom-info h3 {
-                font-size: 16px;
+                font-size: 14px;
                 margin-bottom: 8px;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
             }
 
-            .custom-video-card .custom-info .custom-meta {
-                font-size: 14px;
-                color: #666;
-            }
-
-            /* Modal Styles */
             .custom-modal {
                 position: fixed;
                 top: 0;
@@ -156,16 +150,16 @@
                                                     class="coh-column ssa-instance-46b0422ff4e7b025fa0ca43008caaaf0 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-7 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
                                                     <div class="coh-container coh-ce-cpt_hero_banner-f2668b67">
                                                         <picture>
-                                                            <source data-srcset="{{ asset('assets/images/interview.jpg') }}"
+                                                            <source data-srcset="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
                                                                 media="(min-width: 900px)" type="">
-                                                            <source data-srcset="{{ asset('assets/images/interview.jpg') }}"
+                                                            <source data-srcset="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
                                                                 media="(min-width: 600px) and (max-width: 899px)"
                                                                 type="">
-                                                            <source data-srcset="{{ asset('assets/images/interview.jpg') }}"
+                                                            <source data-srcset="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
                                                                 media="(max-width: 599px)" type="">
                                                             <img class="coh-image ssa-component coh-component coh-image-responsive-xl coh-image-responsive-sm coh-image-responsive-ps  coh-style-object-fit "
                                                                 loading="eager"
-                                                                src="{{ asset('assets/images/interview.jpg') }}"
+                                                                src="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
                                                                 alt="Reading on laptop">
                                                         </picture>
 
@@ -185,23 +179,16 @@
                                         Browse all {{ $pageName }} </h2>
                                     <div class="custom-container">
                                         <div class="custom-video-grid">
-                                            @if ($data->isEmpty())
-                                                <p>No videos found.</p>
-                                            @else
-                                                @foreach ($data as $video)
-                                                    <div class="custom-video-card" data-video-id="{{ $video['url'] }}">
-                                                        <img src="http://img.youtube.com/vi/{{ $video['url'] }}/hqdefault.jpg"
-                                                            alt="Video Thumbnail">
-                                                        <div class="custom-info">
-                                                            <h3>{{ $video['name'] }}</h3>
-                                                        </div>
+                                            @foreach ($data as $video)
+                                                <div class="custom-video-card" data-video-id="{{ $video['url'] }}">
+                                                    <img src="http://img.youtube.com/vi/{{ $video['url'] }}/hqdefault.jpg"
+                                                        alt="Video Thumbnail">
+                                                    <div class="custom-info">
+                                                        <h3>{{ $video['name'] }}</h3>
                                                     </div>
-                                                @endforeach
-                                            @endif
+                                                </div>
+                                            @endforeach
                                         </div>
-                                    </div>
-                                    <div style="padding:2rem 0">
-                                        {{ $data->links('vendor.pagination.default') }}
                                     </div>
 
 
@@ -247,6 +234,48 @@
                 customIframe.src = '';
                 customModal.classList.remove('active');
             }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gridContainer = document.querySelector('.custom-video-grid');
+            let isLoading = false;
+            let page = 1;
+
+            const loadMoreVideos = () => {
+                if (isLoading) return;
+                isLoading = true;
+
+                fetch(`{{ url('getinterviews?page=') }}${page + 1}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.videos.length > 0) {
+                            page++;
+                            data.videos.forEach(video => {
+                                const videoCard = document.createElement('div');
+                                videoCard.className = 'custom-video-card';
+                                videoCard.dataset.videoId = video.url;
+
+                                videoCard.innerHTML = `
+                                <img src="http://img.youtube.com/vi/${video.url}/hqdefault.jpg" alt="Video Thumbnail">
+                                <div class="custom-info">
+                                    <h3>${video.name}</h3>
+                                </div>
+                            `;
+                                gridContainer.appendChild(videoCard);
+                            });
+                        }
+                    })
+                    .catch(error => console.error('Error loading videos:', error))
+                    .finally(() => isLoading = false);
+            };
+
+            window.addEventListener('scroll', () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                    loadMoreVideos();
+                }
+            });
         });
     </script>
 @endpush

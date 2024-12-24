@@ -99,7 +99,7 @@ class PresentationController extends Controller
 
     public function getPresentations()
     {
-        $pageName = 'Presentations';
+        $pageName = 'PRESENTATIONS';
         $data = Presentation::orderBy('id', 'desc')->get();
 
         return view('presentations', compact('pageName', 'data'));

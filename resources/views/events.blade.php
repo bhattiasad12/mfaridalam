@@ -3,10 +3,6 @@
 @section('content')
     @push('css')
         <style>
-            .no-scroll {
-                overflow: hidden;
-            }
-
             /* Modal Styles */
             .modal-description {
                 font-size: 16px;
@@ -343,7 +339,7 @@
                                                                         </div>
                                                                         <h3
                                                                             class="coh-heading coh-style-headline-500 coh-style-headline-heavy coh-ce-cpt_content_card-db949cb9 text-truncate">
-                                                                            <a href="#"
+                                                                            <a href="javascript:void(0)"
                                                                                 onclick="openModal({{ @$value->id }})"
                                                                                 class="coh-link card-link coh-ce-cpt_content_card-bc57a7f9"
                                                                                 target="_self"

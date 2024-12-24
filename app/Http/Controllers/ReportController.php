@@ -100,7 +100,7 @@ class ReportController extends Controller
 
     public function getReports()
     {
-        $pageName = 'Reports';
+        $pageName = 'REPORTS';
         $data = Report::orderBy('id', 'desc')->get();
 
         return view('reports', compact('pageName', 'data'));

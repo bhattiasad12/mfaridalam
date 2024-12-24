@@ -107,7 +107,7 @@ class ArticleController extends Controller
 
     public function getArticles()
     {
-        $pageName = 'Articles';
+        $pageName = 'ARTICLES';
         // $data = Article::all();
         $data = Article::orderBy('id', 'desc')->get();
 

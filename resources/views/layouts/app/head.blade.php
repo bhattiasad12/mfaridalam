@@ -20,7 +20,14 @@
     <link rel="stylesheet" media="all" href="{{ asset('assets/css/style3.css') }}" />
     <link rel="stylesheet" media="all" href="{{ asset('assets/css/style4.css') }}" />
     <link rel="stylesheet" media="all" href="https://static.cloud.coveo.com/atomic/v2/themes/coveo.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+    <style>
+        .friendly-quotes {
+            font-family: 'Caveat', Georgia, serif;
+        }
+    </style>
 
     @stack('css')
 </head>

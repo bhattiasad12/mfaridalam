@@ -5,9 +5,9 @@
                     <div class="footer__navigation-groups">
 
                         <nav class="footer__navigation-group" aria-labelledby="CFA Institute-au">
-                            <div id="CFA Institute-au" class="footer__navigation-group-header">
+                            {{-- <div id="CFA Institute-au" class="footer__navigation-group-header">
                                 Resources
-                            </div>
+                            </div> --}}
                             <ul class="footer__navigation-group-items">
                                 <li class="footer__navigation-group-item">
                                     <a href="{{route('getArticles')}}" class="footer__link"
@@ -17,20 +17,30 @@
                                     <a href="{{route('getArticles')}}"class="footer__link"
                                         data-drupal-link-system-path="node/50131">Reports</a>
                                 </li>
+                            </ul>
+                        </nav>
+                        <nav class="footer__navigation-group" aria-labelledby="Programs-au">
+                            {{-- <div id="Programs-au" class="footer__navigation-group-header">
+                                Insights
+                            </div> --}}
+                            <ul class="footer__navigation-group-items">
                                 <li class="footer__navigation-group-item">
                                     <a href="{{route('getArticles')}}" class="footer__link"
                                         data-drupal-link-system-path="node/49781">Presentations</a>
                                 </li>
+                                
+
                                 <li class="footer__navigation-group-item">
                                     <a href="{{route('getArticles')}}" class="footer__link"
                                         data-drupal-link-system-path="node/51056">News</a>
                                 </li>
+                               
                             </ul>
                         </nav>
-                        <nav class="footer__navigation-group" aria-labelledby="Programs-au">
-                            <div id="Programs-au" class="footer__navigation-group-header">
-                                Insights
-                            </div>
+                        <nav class="footer__navigation-group" aria-labelledby="Membership-au">
+                            {{-- <div id="Membership-au" class="footer__navigation-group-header">
+                                About
+                            </div> --}}
                             <ul class="footer__navigation-group-items">
                                 <li class="footer__navigation-group-item">
                                     <a href="{{route('getArticles')}}" class="footer__link"
@@ -43,9 +53,9 @@
                             </ul>
                         </nav>
                         <nav class="footer__navigation-group" aria-labelledby="Membership-au">
-                            <div id="Membership-au" class="footer__navigation-group-header">
+                            {{-- <div id="Membership-au" class="footer__navigation-group-header">
                                 About
-                            </div>
+                            </div> --}}
                             <ul class="footer__navigation-group-items">
                                 <li class="footer__navigation-group-item">
                                     <a href="{{route('getArticles')}}" class="footer__link"

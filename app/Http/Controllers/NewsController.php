@@ -100,7 +100,7 @@ class NewsController extends Controller
 
     public function getNews()
     {
-        $pageName = 'News';
+        $pageName = 'NEWS';
         $data = News::orderBy('id', 'desc')->get();
 
         return view('news', compact('pageName', 'data'));

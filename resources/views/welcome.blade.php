@@ -19,7 +19,7 @@
                                             Muhammad Farid Alam, FCA</h2>
                                         <div
                                             class="coh-wysiwyg coh-style-text-color-dark-background coh-style-cfa-margin-bottom-lg coh-style-paragraph-50">
-                                            <p>Chartered Accountant & Investment Banker</p>
+                                            <p>Chartered Accountant/Investment Banker</p>
                                             <p>I currently serve as CEO at AKD Securities Limited, which is a proud
                                                 winner of the Best Equity Brokerage House by the CFA Association of
                                                 Pakistan for the last two years.</p>
@@ -27,7 +27,7 @@
                                         </div>
                                         <div
                                             class="coh-wysiwyg coh-style-text-color-dark-background coh-style-cfa-margin-bottom-lg coh-style-paragraph-50">
-                                            <p>"My moto in life is first deserve then desire"</p>
+                                            <p>My moto in life is "first deserve then desire"</p>
                                         </div>`
                                     </div>
                                     <div class="coh-container drop-zone-content coh-ce-cpt_hero-96075d54">
@@ -61,8 +61,8 @@
                             <div
                                 class="coh-container ssa-component coh-component ssa-component-instance-04eaeaad-a4a1-41d7-8ea7-7cc1e9fc65ba coh-component-instance-04eaeaad-a4a1-41d7-8ea7-7cc1e9fc65ba  triple-links--dark ssa-instance-e5fc42cb7d55235acc3263df69d96800 coh-ce-cpt_newsfeed-28c8b2b">
                                 <div class="coh-container  coh-ce-cpt_newsfeed-5d6b4da7 coh-container-boxed"><span
-                                        class="coh-inline-element link__label coh-style-headline-heavy coh-style-headline-500"
-                                        style="color: white;font-size: 1rem;padding: 4rem; ">
+                                        class="coh-inline-element link__label coh-style-headline-heavy friendly-quotes"
+                                        style="color: white;font-size: 1rem;padding: 4rem; line-height: inherit;font-size: larger;">
                                         "KEEP YOUR DREAMS ALIVE. UNDERSTAND, TO ACHIEVE ANYTHING REQUIRES FAITH AND BELIEF
                                         IN YOURSELF, VISION, HARD WORK, DETERMINATION, AND DEDICATION. REMEMBER ALL THINGS
                                         ARE POSSIBLE FOR THOSE WHO BELIEVE" (DEVERS).
@@ -394,9 +394,9 @@
                                                         class="coh-column ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
                                                         <img src="{{ asset('assets/images/452531a3-5fc9-4957-9007-e3eebc2a346e.avif') }}"
                                                             alt=""
-                                                            style="margin-bottom:3rem; border: 8px solid #224366;">
+                                                            style="margin-bottom:3rem; border: 8px solid #fff;">
                                                         <img src="{{ asset('assets/images/572d404f-6608-44a3-a028-050a044ed798.avif') }}"
-                                                            alt="" style="border:  8px solid #224366;">
+                                                            alt="" style="border:  8px solid #fff;">
                                                     </div>
                                                 </div>
                                             </div>
