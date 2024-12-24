@@ -18,7 +18,7 @@
             .custom-video-card {
                 background: #fff;
                 border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
                 overflow: hidden;
                 transition: transform 0.3s, box-shadow 0.3s;
                 cursor: pointer;
@@ -43,7 +43,7 @@
                 font-size: 14px;
                 margin-bottom: 8px;
                 overflow: hidden;
-                white-space: nowrap;
+                /* white-space: nowrap; */
                 text-overflow: ellipsis;
             }
 
@@ -98,6 +98,16 @@
                 background: #f00;
                 color: #fff;
             }
+
+            .custom-loader {
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            .custom-loader img {
+                width: 50px;
+                height: 50px;
+            }
         </style>
     @endpush
     <div class="coh-container coh-style-focusable-content coh-style-paragraph-100 coh-ce-bfd264e3" id="main-content">
@@ -139,7 +149,7 @@
                                                         <div class="coh-container coh-ce-cpt_container-fe57b20b ">
                                                             <h1
                                                                 class="coh-heading ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-headline-100 coh-style-text-color-dark-background align-text-left coh-style-cfa-margin-bottom-sm     ssa-instance-e43e33f0edee0753341d7d614e3a2b59 coh-ce-cpt_heading-b45c50fc">
-                                                                {{ $pageName }}</h1>
+                                                                {{ strtoupper($pageName) }}</h1>
                                                             {{-- <span
                                                                 class="coh-inline-element ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-paragraph-50  coh-style-text-color-dark-background  coh-style-cfa-margin-bottom-lg  ssa-instance-d6c68d38141400ac35fc661ec998b13b coh-ce-cpt_text-ccc8ea09">Stay
                                                                 informed about changes in the industry. </span> --}}
@@ -150,12 +160,15 @@
                                                     class="coh-column ssa-instance-46b0422ff4e7b025fa0ca43008caaaf0 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-7 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
                                                     <div class="coh-container coh-ce-cpt_hero_banner-f2668b67">
                                                         <picture>
-                                                            <source data-srcset="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
+                                                            <source
+                                                                data-srcset="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
                                                                 media="(min-width: 900px)" type="">
-                                                            <source data-srcset="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
+                                                            <source
+                                                                data-srcset="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
                                                                 media="(min-width: 600px) and (max-width: 899px)"
                                                                 type="">
-                                                            <source data-srcset="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
+                                                            <source
+                                                                data-srcset="{{ asset('assets/images/3f1b64b2-57c7-4003-a8ce-ac96c6128c74.avif') }}"
                                                                 media="(max-width: 599px)" type="">
                                                             <img class="coh-image ssa-component coh-component coh-image-responsive-xl coh-image-responsive-sm coh-image-responsive-ps  coh-style-object-fit "
                                                                 loading="eager"
@@ -176,7 +189,8 @@
                                 <div class="coh-container coh-ce-cpt_container-fe57b20b coh-container-boxed" id="table">
                                     <h2 class="coh-heading ssa-component coh-component ssa-component-instance-d7032d65-00b4-4d4c-b659-eb632d58d0cb coh-component-instance-d7032d65-00b4-4d4c-b659-eb632d58d0cb  dark-heading align-text-left coh-style-cfa-margin-top-lg  ssa-instance-177f0c499a6f4f7476f53009d5491bb7 coh-ce-cpt_heading-b45c50fc"
                                         style="padding:4rem 0 4rem 0">
-                                        Browse all {{ $pageName }} </h2>
+                                        {{-- Browse all {{ $pageName }}  --}}
+                                    </h2>
                                     <div class="custom-container">
                                         <div class="custom-video-grid">
                                             @foreach ($data as $video)
@@ -190,8 +204,9 @@
                                             @endforeach
                                         </div>
                                     </div>
-
-
+                                    <div class="custom-loader" id="customLoader" style="display: none;">
+                                        <img src="loader.gif" alt="Loading...">
+                                    </div>
                                     <!-- Modal -->
                                     <div class="custom-modal" id="customVideoModal">
                                         <div class="custom-modal-content">
@@ -236,46 +251,38 @@
             }
         });
     </script>
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const gridContainer = document.querySelector('.custom-video-grid');
-            let isLoading = false;
-            let page = 1;
+        const customContainer = document.querySelector('.custom-video-grid');
+        let nextPageUrl = "{{ $data->nextPageUrl() }}";
 
-            const loadMoreVideos = () => {
-                if (isLoading) return;
-                isLoading = true;
+        const observer = new IntersectionObserver(async (entries) => {
+            const lastEntry = entries[0];
+            if (lastEntry.isIntersecting && nextPageUrl) {
 
-                fetch(`{{ url('getinterviews?page=') }}${page + 1}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.videos.length > 0) {
-                            page++;
-                            data.videos.forEach(video => {
-                                const videoCard = document.createElement('div');
-                                videoCard.className = 'custom-video-card';
-                                videoCard.dataset.videoId = video.url;
+                observer.unobserve(lastEntry.target); // Prevent multiple triggers
+                const response = await fetch(nextPageUrl, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+                const result = await response.json();
 
-                                videoCard.innerHTML = `
-                                <img src="http://img.youtube.com/vi/${video.url}/hqdefault.jpg" alt="Video Thumbnail">
-                                <div class="custom-info">
-                                    <h3>${video.name}</h3>
-                                </div>
-                            `;
-                                gridContainer.appendChild(videoCard);
-                            });
-                        }
-                    })
-                    .catch(error => console.error('Error loading videos:', error))
-                    .finally(() => isLoading = false);
-            };
+                // Append new videos to the container
+                customContainer.insertAdjacentHTML('beforeend', result.data);
 
-            window.addEventListener('scroll', () => {
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
-                    loadMoreVideos();
-                }
-            });
+                // Update the next page URL
+                nextPageUrl = result.nextPageUrl;
+
+                // Re-observe the last video card
+                const newLastVideoCard = customContainer.lastElementChild;
+                if (newLastVideoCard) observer.observe(newLastVideoCard);
+            }
+        }, {
+            rootMargin: '100px'
         });
+
+        // Observe the last video card initially
+        const initialLastVideoCard = customContainer.lastElementChild;
+        if (initialLastVideoCard) observer.observe(initialLastVideoCard);
     </script>
 @endpush

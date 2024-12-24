@@ -43,7 +43,7 @@
                                                         <div class="coh-container coh-ce-cpt_container-fe57b20b ">
                                                             <h1
                                                                 class="coh-heading ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-headline-100 coh-style-text-color-dark-background align-text-left coh-style-cfa-margin-bottom-sm     ssa-instance-e43e33f0edee0753341d7d614e3a2b59 coh-ce-cpt_heading-b45c50fc">
-                                                                {{ $pageName }} </h1>
+                                                                {{ strtoupper($pageName) }} </h1>
                                                             {{-- <span
                                                                 class="coh-inline-element ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-paragraph-50  coh-style-text-color-dark-background  coh-style-cfa-margin-bottom-lg  ssa-instance-d6c68d38141400ac35fc661ec998b13b coh-ce-cpt_text-ccc8ea09">Stay
                                                                 informed about changes in the industry. </span> --}}
@@ -79,7 +79,8 @@
                                 <div class="coh-container coh-ce-cpt_container-fe57b20b coh-container-boxed" style="margin-bottom: 4rem;">
                                     <h2 class="coh-heading ssa-component coh-component ssa-component-instance-d7032d65-00b4-4d4c-b659-eb632d58d0cb coh-component-instance-d7032d65-00b4-4d4c-b659-eb632d58d0cb  dark-heading align-text-left coh-style-cfa-margin-top-lg  ssa-instance-177f0c499a6f4f7476f53009d5491bb7 coh-ce-cpt_heading-b45c50fc"
                                         style="padding:4rem 0 4rem 0">
-                                        Browse all {{ $pageName }} </h2>
+                                        {{-- Browse all {{ $pageName }}  --}}
+                                    </h2>
                                     <table id="example" class="stripe" style="width:100%">
                                         <thead>
                                             <tr>

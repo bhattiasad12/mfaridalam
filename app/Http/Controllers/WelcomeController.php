@@ -20,14 +20,14 @@ class WelcomeController extends Controller
 
     public function getAboutMe()
     {
-        $pageName = 'ABOUT';
+        $pageName = 'About';
 
         return view('about_me', compact('pageName'));
     }
 
     public function getContactMe()
     {
-        $pageName = 'CONTACT';
+        $pageName = 'Contact';
 
         return view('contact_me', compact('pageName'));
     }

@@ -113,7 +113,7 @@ class EventController extends Controller
 
     public function getEvents()
     {
-        $pageName = 'EVENTS';
+        $pageName = 'Events';
         $data = Event::with('images')->orderBy('id', 'desc')->paginate(10);
         // $data = Event::with(['images' => function ($query) {
         //     $query->take(1);

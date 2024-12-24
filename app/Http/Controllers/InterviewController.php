@@ -82,13 +82,18 @@ class InterviewController extends Controller
         return redirect()->route('interviews.index')->with('success', 'interview deleted successfully!');
     }
 
-    public function getInterviews()
+    public function getInterviews(Request $request)
     {
+        $data = Interview::orderBy('id', 'desc')->paginate(8);
 
-        $pageName = 'INTERVIEWS';
+        if ($request->ajax()) {
+            return response()->json([
+                'data' => view('partials.interview_videos', compact('data'))->render(),
+                'nextPageUrl' => $data->nextPageUrl()
+            ]);
+        }
 
-        $data = Interview::orderBy('id', 'desc')->paginate(16)->fragment('table');
-
+        $pageName = 'Interviews';
         return view('interviews', compact('pageName', 'data'));
     }
 }

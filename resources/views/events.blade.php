@@ -279,7 +279,7 @@
                                                         <div class="coh-container coh-ce-cpt_container-fe57b20b ">
                                                             <h1
                                                                 class="coh-heading ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-headline-100 coh-style-text-color-dark-background align-text-left coh-style-cfa-margin-bottom-sm     ssa-instance-e43e33f0edee0753341d7d614e3a2b59 coh-ce-cpt_heading-b45c50fc">
-                                                                {{ $pageName }} </h1>
+                                                                {{ strtoupper($pageName) }} </h1>
                                                             {{-- <span
                                                                 class="coh-inline-element ssa-component coh-component ssa-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-component-instance-9249157a-3f1e-4d77-ab43-c3f6cb0fe24f coh-style-paragraph-50  coh-style-text-color-dark-background  coh-style-cfa-margin-bottom-lg  ssa-instance-d6c68d38141400ac35fc661ec998b13b coh-ce-cpt_text-ccc8ea09">Stay
                                                                 informed about changes in the industry. </span> --}}
@@ -315,7 +315,8 @@
                                 <div class="coh-container coh-ce-cpt_container-fe57b20b coh-container-boxed">
                                     <h2 class="coh-heading ssa-component coh-component ssa-component-instance-4071deaa-62d6-4d38-b641-22c1f9fc5511 coh-component-instance-4071deaa-62d6-4d38-b641-22c1f9fc5511  dark-heading align-text-center coh-style-cfa-margin-bottom-lg     ssa-instance-06c0475b7fc0903eb4405c157784866d coh-ce-cpt_heading-b45c50fc"
                                         style="padding:4rem 0">
-                                        Browse all {{ $pageName }}</h2>
+                                        {{-- Browse all {{ $pageName }} --}}
+                                    </h2>
                                     <div
                                         class="coh-container ssa-component coh-component ssa-component-instance-daae0a22-9583-4783-b45c-200af5285ecd coh-component-instance-daae0a22-9583-4783-b45c-200af5285ecd ssa-instance-210c8a7d219d405adb90a2ef9fb7a615 coh-ce-cpt_3_column_layout-9c402b21">
                                         <div class="coh-container ">
