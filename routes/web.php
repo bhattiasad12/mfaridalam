@@ -43,6 +43,49 @@ Route::middleware('auth')->group(function () {
 });
 
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/artisan/config-cache', function () {
+        Artisan::call('config:cache');
+        return "Configuration cached successfully!";
+    });
+
+    Route::get('/artisan/event-cache', function () {
+        Artisan::call('event:cache');
+        return "Events cached successfully!";
+    });
+
+    Route::get('/artisan/route-cache', function () {
+        Artisan::call('route:cache');
+        return "Routes cached successfully!";
+    });
+
+    Route::get('/artisan/view-cache', function () {
+        Artisan::call('view:cache');
+        return "Views cached successfully!";
+    });
+
+    Route::get('/artisan/optimize', function () {
+        Artisan::call('optimize');
+        return "Application optimized successfully!";
+    });
+
+    Route::get('/artisan/composer-dump', function () {
+        exec('composer dump-autoload --optimize');
+        return "Composer autoload optimized!";
+    });
+
+    Route::get('/artisan/npm-build', function () {
+        exec('npm run build');
+        return "Assets built using Vite!";
+    });
+
+    Route::get('/artisan/npm-production', function () {
+        exec('npm run production');
+        return "Assets built using Laravel Mix!";
+    });
+});
+
+
 Route::get('/asad', function () {
     // Check if the application is currently in maintenance mode
     if (app()->isDownForMaintenance()) {
