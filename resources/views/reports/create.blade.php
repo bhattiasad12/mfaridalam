@@ -31,6 +31,9 @@
             $('#success-message').addClass('d-none');
             $('#error-message').addClass('d-none');
 
+            let submitButton = $(this).find('button[type="submit"]');
+            submitButton.prop('disabled', true).text('Submitting...');
+
             // Prepare form data
             let formData = new FormData(this);
 

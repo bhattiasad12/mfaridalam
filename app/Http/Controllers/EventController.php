@@ -60,6 +60,13 @@ class EventController extends Controller
                 // Get the original file name
                 $originalFileName = $image->getClientOriginalName();
 
+                $shortenedName = strlen($originalFileName) > 30
+                    ? substr($originalFileName, 0, 10) . '...' . substr($originalFileName, -10)
+                    : $originalFileName;
+
+                // Ensure unique file name
+                $originalFileName = time() . '-' . $shortenedName;
+
                 // Store the file in the unique folder
                 $image->move($directory, $originalFileName);
 
