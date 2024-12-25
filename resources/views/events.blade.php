@@ -43,6 +43,7 @@
             }
 
             .viewer-image {
+                padding: 15%;
                 max-width: 80%;
                 max-height: 80%;
                 border-radius: 8px;
