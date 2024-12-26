@@ -4,7 +4,7 @@
         <div class="coh-container coh-ce-cpt_site_header-9ac56c51 coh-container-boxed">
             <div class="coh-container coh-ce-cpt_site_header-3f35602d" style="background: #224366;">
                 <ul class="coh-menu-list-container coh-unordered-list coh-ce-c0b6bbc8">
-                    <p>Visitor Count: {{ @$visit }}</p>
+                    {{-- <p>Visitor Count: {{ @$visit }}</p> --}}
                 </ul>
                 <span
                     class="coh-container ssa-component coh-component ssa-component-instance-2deda0ba-35c6-4be9-a864-fea3e44be036 coh-component-instance-2deda0ba-35c6-4be9-a864-fea3e44be036 coh-style-flex-grow ssa-instance-0e9bad08079d7f799e9ce80c55588a74 coh-ce-cpt_spacer-b3e761a3">
