@@ -29,7 +29,7 @@
                                         <div
                                             class="coh-wysiwyg coh-style-text-color-dark-background coh-style-cfa-margin-bottom-lg coh-style-paragraph-50">
                                             <p>My guiding philosophy in life is simple yet profound: <i
-                                                    style="white-space: nowrap;">"First deserve, then
+                                                    style="white-space: nowrap;font-weight: 600;">"First deserve, then
                                                     desire."</i></p>
                                         </div>`
                                     </div>
@@ -122,7 +122,7 @@
                                                                             <br />
                                                                             This phase of my life taught me resilience. As
                                                                             the saying goes, <i
-                                                                                style="white-space: nowrap;">"When the going
+                                                                                style="white-space: nowrap;font-weight: 600;">"When the going
                                                                                 gets tough, the
                                                                                 tough get going." </i>
                                                                         </span></p>
@@ -167,7 +167,7 @@
                                                             class="coh-heading ssa-component coh-component ssa-component-instance-16fbe3c9-cac8-4175-87dc-11371ef1f237 coh-component-instance-16fbe3c9-cac8-4175-87dc-11371ef1f237  light-heading align-text-left coh-style-cfa-margin-bottom-lg     ssa-instance-9a7f77c8f24f88c5c4aa8aa14a3fd793 coh-ce-cpt_heading-b45c50fc">
                                                             Professional Journey
                                                         </h2>
-                                                        <h3 style="color: #fff; font-weight:400; margin-bottom: 0.75rem;"
+                                                        <h3 style="color: #fff; font-weight:500; margin-bottom: 0.75rem;"
                                                             class="coh-heading coh-style-headline-500 ssa-instance-c96d9abd7172c9cd49d5a55670f989d9 coh-ce-cpt_icon_card-d94f8b1f">
                                                             Early Beginnings</h3>
                                                         <div
@@ -192,7 +192,7 @@
                                                                 <br />
                                                             </p>
                                                         </div>
-                                                        <h3 style="color: #fff; font-weight:400; margin-bottom: 0.75rem;"
+                                                        <h3 style="color: #fff; font-weight:500; margin-bottom: 0.75rem;"
                                                             class="coh-heading coh-style-headline-500 ssa-instance-c96d9abd7172c9cd49d5a55670f989d9 coh-ce-cpt_icon_card-d94f8b1f">
                                                             Leadership Roles</h3>
                                                         <div
@@ -212,7 +212,7 @@
                                                                 <br />
                                                             </p>
                                                         </div>
-                                                        <h3 style="color: #fff; font-weight:400; margin-bottom: 0.75rem;"
+                                                        <h3 style="color: #fff; font-weight:500; margin-bottom: 0.75rem;"
                                                             class="coh-heading coh-style-headline-500 ssa-instance-c96d9abd7172c9cd49d5a55670f989d9 coh-ce-cpt_icon_card-d94f8b1f">
                                                             Joining AKD Securities</h3>
                                                         <div

@@ -86,6 +86,14 @@
                         <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
                             <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
                                 data-once="js-coh-menu-item-link-init">
+                                <a href="{{ route('getInterviews') }}"
+                                    style="color: black; font-weight: 500; font-size: 1rem;">Interviews
+                                </a>
+                            </span>
+                        </li>
+                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
+                            <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
+                                data-once="js-coh-menu-item-link-init">
                                 <a href="{{ route('getReports') }}"
                                     style="color: black; font-weight: 500; font-size: 1rem;">Reports
                                 </a>
@@ -104,14 +112,6 @@
                                 data-once="js-coh-menu-item-link-init">
                                 <a href="{{ route('getNews') }}"
                                     style="color: black; font-weight: 500; font-size: 1rem;">News
-                                </a>
-                            </span>
-                        </li>
-                        <li class="coh-menu-list-item coh-ce-9f39a733 js-coh-menu-item">
-                            <span class="coh-link coh-ce-2793ed5d js-coh-menu-item-link" tabindex="0"
-                                data-once="js-coh-menu-item-link-init">
-                                <a href="{{ route('getInterviews') }}"
-                                    style="color: black; font-weight: 500; font-size: 1rem;">Interviews
                                 </a>
                             </span>
                         </li>

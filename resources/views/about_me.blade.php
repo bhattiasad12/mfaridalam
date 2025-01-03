@@ -99,7 +99,7 @@
                                                                         financial ecosystem and the ability to adapt to its
                                                                         ever-changing dynamics. As he aptly quotes:</p>
                                                                     <span
-                                                                        style="color: black;padding: 4rem 0; font-size: large">
+                                                                        style="color: black;padding: 4rem 0; font-size: large; font-weight: 500;">
                                                                         "Strange how much you have to know before you know
                                                                         how little you know."
                                                                     </span>
