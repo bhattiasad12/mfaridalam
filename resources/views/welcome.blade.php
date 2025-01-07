@@ -19,7 +19,7 @@
                                                 <div
                                                     class="coh-row-inner ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-8364854d">
                                                     <div
-                                                        class="coh-column ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-1f4e3db coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
+                                                        class="coh-column ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-1f4e3db coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0" style="margin-top: 2.5rem;">
                                                         <h2
                                                             class="coh-heading heading coh-style-text-color-dark-background coh-style-flecha coh-ce-cpt_hero-10cc7c5d">
                                                             Muhammad Farid Alam, FCA</h2>
