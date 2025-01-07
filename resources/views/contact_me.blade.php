@@ -170,12 +170,15 @@
                                                     class="coh-column ssa-instance-46b0422ff4e7b025fa0ca43008caaaf0 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-7 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
                                                     <div class="coh-container coh-ce-cpt_hero_banner-f2668b67">
                                                         <picture>
-                                                            <source data-srcset="{{ asset('assets/images/contact_me.jpg') }}"
+                                                            <source
+                                                                data-srcset="{{ asset('assets/images/contact_me.jpg') }}"
                                                                 media="(min-width: 900px)" type="">
-                                                            <source data-srcset="{{ asset('assets/images/contact_me.jpg') }}"
+                                                            <source
+                                                                data-srcset="{{ asset('assets/images/contact_me.jpg') }}"
                                                                 media="(min-width: 600px) and (max-width: 899px)"
                                                                 type="">
-                                                            <source data-srcset="{{ asset('assets/images/contact_me.jpg') }}"
+                                                            <source
+                                                                data-srcset="{{ asset('assets/images/contact_me.jpg') }}"
                                                                 media="(max-width: 599px)" type="">
                                                             <img class="coh-image ssa-component coh-component coh-image-responsive-xl coh-image-responsive-sm coh-image-responsive-ps  coh-style-object-fit "
                                                                 loading="eager"
@@ -204,22 +207,29 @@
                                                 <h6 class="custom-subheading">Get In Touch</h6>
                                                 <ul class="custom-contact-list">
                                                     <li class="custom-contact-item">
-                                                        <span class="custom-icon"><i
-                                                                class="fas fa-map-marker-alt"></i></span>
-                                                        <span class="custom-text">606, Continental Trade Centre, Clifton
-                                                            Block 8, Karachi, Pakistan</span>
+                                                        <i class="fas fa-map-marker-alt custom-icon"></i>
+                                                        <span style="text-align: left;">AKD Securities Limited, 
+                                                        </br>
+                                                            Continental Trade Centre, 
+                                                        </br>
+                                                            Clifton Block 8, 
+                                                        </br>
+                                                            Karachi, 
+                                                        </br>
+                                                            Pakistan</span>
                                                     </li>
+
                                                     <li class="custom-contact-item">
                                                         <span class="custom-icon"><i class="fas fa-phone-alt"></i></span>
                                                         <span class="custom-text">UAN: +92 111-253-111</span>
                                                     </li>
-                                                    <li class="custom-contact-item">
+                                                    {{-- <li class="custom-contact-item">
                                                         <span class="custom-icon"><i class="fas fa-fax"></i></span>
                                                         <span class="custom-text">FAX: +92(21) 586-7992</span>
-                                                    </li>
+                                                    </li> --}}
                                                     <li class="custom-contact-item">
                                                         <span class="custom-icon"><i class="fas fa-envelope"></i></span>
-                                                        <span class="custom-text">Email: farid.alam@akdsecurities.net</span>
+                                                        <span class="custom-text">Email: farid.alam@akdsl.com</span>
                                                     </li>
                                                 </ul>
                                             </div>
