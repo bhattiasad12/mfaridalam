@@ -3,7 +3,22 @@
             <div class="coh-container footer__top coh-ce-cpt_site_footer-108f4cf7 coh-container-boxed">
                 <div class="coh-block">
                     <div class="footer__navigation-groups">
-
+                        <nav class="footer__navigation-group" aria-labelledby="Membership-au">
+                            {{-- <div id="Membership-au" class="footer__navigation-group-header">
+                                About
+                            </div> --}}
+                            <ul class="footer__navigation-group-items">
+                                <li class="footer__navigation-group-item">
+                                    <a href="{{route('getAboutMe')}}" class="footer__link"
+                                        data-drupal-link-system-path="node/1341">About</a>
+                                </li>
+                             
+                                <li class="footer__navigation-group-item">
+                                    <a href="{{route('getPresentations')}}" class="footer__link"
+                                        data-drupal-link-system-path="node/49781">Presentations</a>
+                                </li>
+                            </ul>
+                        </nav>
                         <nav class="footer__navigation-group" aria-labelledby="CFA Institute-au">
                             {{-- <div id="CFA Institute-au" class="footer__navigation-group-header">
                                 Resources
@@ -11,12 +26,14 @@
                             <ul class="footer__navigation-group-items">
                                 <li class="footer__navigation-group-item">
                                     <a href="{{route('getArticles')}}" class="footer__link"
-                                        data-drupal-link-system-path="node/51121">Articles overview</a>
+                                        data-drupal-link-system-path="node/51121">Articles</a>
                                 </li>
+                        
                                 <li class="footer__navigation-group-item">
-                                    <a href="{{route('getArticles')}}"class="footer__link"
-                                        data-drupal-link-system-path="node/50131">Reports</a>
+                                    <a href="{{route('getNews')}}" class="footer__link"
+                                        data-drupal-link-system-path="node/51056">News</a>
                                 </li>
+                               
                             </ul>
                         </nav>
                         <nav class="footer__navigation-group" aria-labelledby="Programs-au">
@@ -25,29 +42,11 @@
                             </div> --}}
                             <ul class="footer__navigation-group-items">
                                 <li class="footer__navigation-group-item">
-                                    <a href="{{route('getArticles')}}" class="footer__link"
-                                        data-drupal-link-system-path="node/49781">Presentations</a>
-                                </li>
-                                
-
-                                <li class="footer__navigation-group-item">
-                                    <a href="{{route('getArticles')}}" class="footer__link"
-                                        data-drupal-link-system-path="node/51056">News</a>
-                                </li>
-                               
-                            </ul>
-                        </nav>
-                        <nav class="footer__navigation-group" aria-labelledby="Membership-au">
-                            {{-- <div id="Membership-au" class="footer__navigation-group-header">
-                                About
-                            </div> --}}
-                            <ul class="footer__navigation-group-items">
-                                <li class="footer__navigation-group-item">
-                                    <a href="{{route('getArticles')}}" class="footer__link"
+                                    <a href="{{route('getInterviews')}}" class="footer__link"
                                         data-drupal-link-system-path="node/1816">Interviews</a>
                                 </li>
                                 <li class="footer__navigation-group-item">
-                                    <a href="{{route('getArticles')}}" class="footer__link"
+                                    <a href="{{route('getEvents')}}" class="footer__link"
                                         data-drupal-link-system-path="node/50976">Events</a>
                                 </li>
                             </ul>
@@ -58,12 +57,12 @@
                             </div> --}}
                             <ul class="footer__navigation-group-items">
                                 <li class="footer__navigation-group-item">
-                                    <a href="{{route('getArticles')}}" class="footer__link"
-                                        data-drupal-link-system-path="node/1341">About me</a>
+                                    <a href="{{route('getReports')}}"class="footer__link"
+                                        data-drupal-link-system-path="node/50131">Reports</a>
                                 </li>
                                 <li class="footer__navigation-group-item">
-                                    <a href="{{route('getArticles')}}" class="footer__link"
-                                        data-drupal-link-system-path="node/2406">Contact me</a>
+                                    <a href="{{route('getContactMe')}}" class="footer__link"
+                                        data-drupal-link-system-path="node/2406">Contact</a>
                                 </li>
                             </ul>
                         </nav>

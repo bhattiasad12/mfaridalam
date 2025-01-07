@@ -9,47 +9,48 @@
                     <div>
                         <div>
                             <div
-                                class="coh-container ssa-component coh-component ssa-component-instance-fc2db1d5-479c-4c43-be1f-c74013099190 coh-component-instance-fc2db1d5-479c-4c43-be1f-c74013099190  ssa-instance-27584faef612cacc28c3060138df1130 coh-ce-cpt_hero-453a75b5">
-                                <div
-                                    class="coh-container tall left-align-content coh-ce-cpt_hero-6c530fb6 coh-container-boxed">
-                                    <div class="coh-container text-content coh-ce-cpt_hero-1f517203">
-                                        <!-- <h1 class="coh-heading heading coh-style-cfa-margin-bottom-lg coh-style-text-color-dark-background coh-style-flecha coh-style-flecha-xxl coh-ce-cpt_hero-10cc7c5d">Muhammad Farid Alam, FCA</h1> -->
-                                        <h2
-                                            class="coh-heading heading coh-style-text-color-dark-background coh-style-flecha coh-ce-cpt_hero-10cc7c5d">
-                                            Muhammad Farid Alam, FCA</h2>
-                                        <div
-                                            class="coh-wysiwyg coh-style-text-color-dark-background coh-style-cfa-margin-bottom-lg coh-style-paragraph-50">
-                                            <p>Chartered Accountant/Investment Banker</p>
-                                            <p>I am Muhammad Farid Alam, a Fellow Chartered Accountant (FCA) and an
-                                                investment banker with over two decades of experience in financial markets.
-                                                Currently, I serve as the CEO of AKD Securities Limited, which has won
-                                                numerous awards and accolades over years. </p>
-                                            <!-- <p>"My moto in life is first deserve then desire"</p> -->
+                                class="coh-container ssa-component coh-component ssa-component-instance-17d807a7-5409-421f-9b0a-6221434c0949 coh-component-instance-17d807a7-5409-421f-9b0a-6221434c0949 match-height     background--bleed ssa-instance-27e68cfae2ae990e116098fcbc5617ea coh-ce-cpt_container-ba3cd04b" style="padding:0rem">
+                                <div class="coh-container coh-ce-cpt_container-fe57b20b coh-container-boxed">
+                                    <div
+                                        class="coh-container ssa-component coh-component ssa-component-instance-397c9456-5487-4bfb-bbee-e293ba1996aa coh-component-instance-397c9456-5487-4bfb-bbee-e293ba1996aa ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-228dfee8">
+                                        <div class="coh-container ">
+                                            <div class="coh-row coh-row-xl coh-row-visible-xl"
+                                                data-coh-row-match-heights="[]">
+                                                <div
+                                                    class="coh-row-inner ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-8364854d">
+                                                    <div
+                                                        class="coh-column ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-1f4e3db coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
+                                                        <h2
+                                                            class="coh-heading heading coh-style-text-color-dark-background coh-style-flecha coh-ce-cpt_hero-10cc7c5d">
+                                                            Muhammad Farid Alam, FCA</h2>
+                                                        <div
+                                                            class="coh-wysiwyg coh-style-text-color-dark-background coh-style-cfa-margin-bottom-lg coh-style-paragraph-50">
+                                                            <p>Chartered Accountant/Investment Banker</p>
+                                                            <p>I am Muhammad Farid Alam, a Fellow Chartered Accountant (FCA)
+                                                                and an
+                                                                investment banker with over two decades of experience in
+                                                                financial markets.
+                                                                Currently, I serve as the CEO of AKD Securities Limited,
+                                                                which has won
+                                                                numerous awards and accolades over years. </p>
+                                                            <!-- <p>"My moto in life is first deserve then desire"</p> -->
+                                                        </div>
+                                                        <div
+                                                            class="coh-wysiwyg coh-style-text-color-dark-background coh-style-cfa-margin-bottom-lg coh-style-paragraph-50">
+                                                            <p>My guiding philosophy in life is simple yet profound: <i
+                                                                    style="white-space: nowrap;font-weight: 600;">"First
+                                                                    deserve, then
+                                                                    desire."</i></p>
+                                                        </div>`
+                                                    </div>
+                                                    <div
+                                                        class="coh-column ssa-instance-57f4e70ce9586602d8ad2a08eeae3878 coh-ce-cpt_2_column_layout-ecfef6d5 coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-visible-sm coh-col-sm-6 coh-col-sm-push-0 coh-col-sm-pull-0 coh-visible-xl coh-col-xl-6 coh-col-xl-push-0 coh-col-xl-pull-0">
+                                                        <img src="{{ asset('assets/images/293240f7-0e5c-489d-aa7a-d853dae3cc35.avif') }}"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div
-                                            class="coh-wysiwyg coh-style-text-color-dark-background coh-style-cfa-margin-bottom-lg coh-style-paragraph-50">
-                                            <p>My guiding philosophy in life is simple yet profound: <i
-                                                    style="white-space: nowrap;font-weight: 600;">"First deserve, then
-                                                    desire."</i></p>
-                                        </div>`
-                                    </div>
-                                    <div class="coh-container drop-zone-content coh-ce-cpt_hero-96075d54">
-                                        <picture>
-                                            <source
-                                                data-srcset="{{ asset('assets/images/293240f7-0e5c-489d-aa7a-d853dae3cc35.avif') }}"
-                                                media="(min-width: 900px)" type="">
-                                            <source
-                                                data-srcset="{{ asset('assets/images/293240f7-0e5c-489d-aa7a-d853dae3cc35.avif') }}"
-                                                media="(min-width: 600px) and (max-width: 899px)" type="">
-                                            <source
-                                                data-srcset="{{ asset('assets/images/293240f7-0e5c-489d-aa7a-d853dae3cc35.avif') }}"
-                                                media="(max-width: 599px)" type="">
-                                            <img class="coh-image ssa-component coh-component coh-image-responsive-xl coh-image-responsive-sm coh-image-responsive-ps coh-style-aspect-ratio---square coh-style-object-fit coh-style-fill-available-space"
-                                                loading="eager"
-                                                src="{{ asset('assets/images/293240f7-0e5c-489d-aa7a-d853dae3cc35.avif') }}"
-                                                alt="blue" />
-                                        </picture>
-
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +123,8 @@
                                                                             <br />
                                                                             This phase of my life taught me resilience. As
                                                                             the saying goes, <i
-                                                                                style="white-space: nowrap;font-weight: 600;">"When the going
+                                                                                style="white-space: nowrap;font-weight: 600;">"When
+                                                                                the going
                                                                                 gets tough, the
                                                                                 tough get going." </i>
                                                                         </span></p>
