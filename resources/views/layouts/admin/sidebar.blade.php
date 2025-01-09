@@ -4,7 +4,7 @@
     <!--begin::Logo-->
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
         <!--begin::Logo image-->
-        <a href="index.html">
+        <a href="#">
             <img alt="Logo" src="{{ asset('assets/images/farid_logo_dark.avif') }}"
                 class="h-70px app-sidebar-logo-default" />
             <img alt="Logo" src="{{ asset('assets/images/farid_logo_dark.avif') }}"
@@ -84,6 +84,13 @@
                         <!--begin:Menu link-->
                         <a class="menu-link" href="{{ route('events.index') }}">
                             <span class="menu-title">Events</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link" href="{{ route('contact.index') }}">
+                            <span class="menu-title">Messages</span>
                         </a>
                         <!--end:Menu link-->
                     </div>

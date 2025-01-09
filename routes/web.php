@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\InterviewController;
 use App\Http\Controllers\NewsController;
@@ -27,6 +28,7 @@ Route::get('/getevent-detail', [EventController::class, 'eventDetail'])->middlew
 Route::get('/getinterviews', [InterviewController::class, 'getInterviews'])->middleware(GetVisitCount::class)->middleware(GetVisitCount::class)->name('getInterviews');
 Route::get('/getabout-me', [WelcomeController::class, 'getAboutMe'])->middleware(GetVisitCount::class)->name('getAboutMe');
 Route::get('/getcontact-me', [WelcomeController::class, 'getContactMe'])->middleware(GetVisitCount::class)->name('getContactMe');
+Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::middleware('auth')->group(function () {
     Route::resource('articles', ArticleController::class);
@@ -35,6 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('news', NewsController::class);
     Route::resource('interviews', InterviewController::class);
     Route::resource('events', EventController::class);
+    // Route::resource('contact', ContactController::class)->except(['store']);
+    Route::resource('contact', ContactController::class);
 
     Route::get('/articles/{id}/download', [ArticleController::class, 'download'])->name('articles.download');
     Route::get('/reports/{id}/download', [ReportController::class, 'download'])->name('reports.download');

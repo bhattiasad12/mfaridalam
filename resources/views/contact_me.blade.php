@@ -208,14 +208,14 @@
                                                 <ul class="custom-contact-list">
                                                     <li class="custom-contact-item">
                                                         <i class="fas fa-map-marker-alt custom-icon"></i>
-                                                        <span style="text-align: left;">AKD Securities Limited, 
-                                                        </br>
-                                                            Continental Trade Centre, 
-                                                        </br>
-                                                            Clifton Block 8, 
-                                                        </br>
-                                                            Karachi, 
-                                                        </br>
+                                                        <span style="text-align: left;">AKD Securities Limited,
+                                                            </br>
+                                                            Continental Trade Centre,
+                                                            </br>
+                                                            Clifton Block 8,
+                                                            </br>
+                                                            Karachi,
+                                                            </br>
                                                             Pakistan</span>
                                                     </li>
 
@@ -237,8 +237,15 @@
                                             <!-- Right Section: Contact Form -->
                                             <div class="custom-form-column">
                                                 <h6 class="custom-form-heading">Send Me a Message</h6>
-                                                <form id="custom-contact-form" method="post" action="/"
-                                                    enctype="multipart/form-data">
+                                                @if (session('success'))
+                                                    <div class="alert alert-success">
+                                                        {{ session('success') }}
+                                                    </div>
+                                                @endif
+                                                <form id="custom-contact-form" method="post"
+                                                    action="{{ route('contact.store') }}" enctype="multipart/form-data">
+                                                    @csrf
+                                                    @method('POST')
                                                     <div class="custom-form-group">
                                                         <label for="name" class="custom-form-label">Name</label>
                                                         <input type="text" id="name" name="name"
@@ -252,15 +259,14 @@
                                                     <div class="custom-form-group">
                                                         <label for="subject" class="custom-form-label">Subject</label>
                                                         <input type="text" id="subject" name="subject"
-                                                            class="custom-form-input" placeholder="Subject" required>
+                                                            class="custom-form-input" placeholder="subject" required>
                                                     </div>
                                                     <div class="custom-form-group">
                                                         <label for="message" class="custom-form-label">Message</label>
-                                                        <textarea id="message" name="message" class="custom-form-textarea" placeholder="Your message" required></textarea>
+                                                        <textarea id="message" name="message" maxlength="255" class="custom-form-textarea" placeholder="Your message" required></textarea>
                                                     </div>
                                                     <button type="submit"
-                                                        class="coh-link coh_buttons_item     coh-style-link-button-color    ssa-instance-cd9e8472546c9656ad630da5cc48b3fb coh-ce-cpt_link-5dc08d081 coh-ce-cpt_link-5dc08d08"
-                                                        target="_blank"> Send Message</button>
+                                                        class="coh-link coh_buttons_item     coh-style-link-button-color    ssa-instance-cd9e8472546c9656ad630da5cc48b3fb coh-ce-cpt_link-5dc08d081 coh-ce-cpt_link-5dc08d08">Send Message</button>
                                                 </form>
                                             </div>
                                         </div>
