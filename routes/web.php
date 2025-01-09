@@ -37,9 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('news', NewsController::class);
     Route::resource('interviews', InterviewController::class);
     Route::resource('events', EventController::class);
-    // Route::resource('contact', ContactController::class)->except(['store']);
-    Route::resource('contact', ContactController::class);
-
+    Route::resource('contact', ContactController::class)->except(['store']);
+    
     Route::get('/articles/{id}/download', [ArticleController::class, 'download'])->name('articles.download');
     Route::get('/reports/{id}/download', [ReportController::class, 'download'])->name('reports.download');
     Route::get('/presentations/{id}/download', [PresentationController::class, 'download'])->name('presentations.download');
