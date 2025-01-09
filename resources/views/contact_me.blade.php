@@ -238,7 +238,7 @@
                                             <div class="custom-form-column">
                                                 <h6 class="custom-form-heading">Send Me a Message</h6>
                                                 @if (session('success'))
-                                                    <div class="alert alert-success">
+                                                    <div class="alert alert-success" id="success-message">
                                                         {{ session('success') }}
                                                     </div>
                                                 @endif
@@ -249,24 +249,50 @@
                                                     <div class="custom-form-group">
                                                         <label for="name" class="custom-form-label">Name</label>
                                                         <input type="text" id="name" name="name"
-                                                            class="custom-form-input" placeholder="Full name" required>
+                                                            class="custom-form-input" placeholder="Full name" value="{{old('name') }}">
+                                                        @error('name')
+                                                            <div class="alert alert-danger error" style="color:red">
+                                                                {{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                     <div class="custom-form-group">
                                                         <label for="email" class="custom-form-label">Email</label>
                                                         <input type="email" id="email" name="email"
-                                                            class="custom-form-input" placeholder="Email address" required>
+                                                            class="custom-form-input" placeholder="Email address" value="{{old('email') }}">
+                                                        @error('email')
+                                                            <div class="alert alert-danger error" style="color:red">
+                                                                {{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                     <div class="custom-form-group">
                                                         <label for="subject" class="custom-form-label">Subject</label>
                                                         <input type="text" id="subject" name="subject"
-                                                            class="custom-form-input" placeholder="subject" required>
+                                                            class="custom-form-input" placeholder="subject" value="{{old('subject') }}">
+                                                        @error('subject')
+                                                            <div class="alert alert-danger error" style="color:red">
+                                                                {{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                     <div class="custom-form-group">
                                                         <label for="message" class="custom-form-label">Message</label>
-                                                        <textarea id="message" name="message" maxlength="255" class="custom-form-textarea" placeholder="Your message" required></textarea>
+                                                        <textarea id="message" name="message" maxlength="255" class="custom-form-textarea" placeholder="Your message"
+                                                            >{{old('message') }}</textarea>
+                                                        @error('message')
+                                                            <div class="alert alert-danger error" style="color:red">
+                                                                {{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="custom-form-group">
+                                                        {!! NoCaptcha::renderJs() !!}
+                                                        {!! NoCaptcha::display() !!}
+                                                        @error('g-recaptcha-response')
+                                                            <div class="alert alert-danger error" style="color:red">
+                                                                {{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                     <button type="submit"
-                                                        class="coh-link coh_buttons_item     coh-style-link-button-color    ssa-instance-cd9e8472546c9656ad630da5cc48b3fb coh-ce-cpt_link-5dc08d081 coh-ce-cpt_link-5dc08d08">Send Message</button>
+                                                        class="coh-link coh_buttons_item     coh-style-link-button-color    ssa-instance-cd9e8472546c9656ad630da5cc48b3fb coh-ce-cpt_link-5dc08d081 coh-ce-cpt_link-5dc08d08">Send
+                                                        Message</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -286,5 +312,23 @@
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script>
         new DataTable('#example');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const successMessage = document.getElementById('success-message');
+            const firstError = document.querySelector('.alert.alert-danger');
+            if (successMessage) {
+                successMessage.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+            if (firstError) {
+                // Scroll to the first error
+                firstError.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        });
     </script>
 @endpush
