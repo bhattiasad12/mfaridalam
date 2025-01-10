@@ -105,6 +105,20 @@
                 background-color: black;
             }
 
+            .recaptcha-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            .recaptcha-container iframe {
+                max-width: 100%;
+                height: auto;
+            }
+
             /* Responsive styling */
             @media (max-width: 768px) {
                 .custom-contact-container {
@@ -249,7 +263,8 @@
                                                     <div class="custom-form-group">
                                                         <label for="name" class="custom-form-label">Name</label>
                                                         <input type="text" id="name" name="name"
-                                                            class="custom-form-input" placeholder="Full name" value="{{old('name') }}">
+                                                            class="custom-form-input" placeholder="Full name"
+                                                            value="{{ old('name') }}">
                                                         @error('name')
                                                             <div class="alert alert-danger error" style="color:red">
                                                                 {{ $message }}</div>
@@ -258,7 +273,8 @@
                                                     <div class="custom-form-group">
                                                         <label for="email" class="custom-form-label">Email</label>
                                                         <input type="email" id="email" name="email"
-                                                            class="custom-form-input" placeholder="Email address" value="{{old('email') }}">
+                                                            class="custom-form-input" placeholder="Email address"
+                                                            value="{{ old('email') }}">
                                                         @error('email')
                                                             <div class="alert alert-danger error" style="color:red">
                                                                 {{ $message }}</div>
@@ -267,7 +283,8 @@
                                                     <div class="custom-form-group">
                                                         <label for="subject" class="custom-form-label">Subject</label>
                                                         <input type="text" id="subject" name="subject"
-                                                            class="custom-form-input" placeholder="subject" value="{{old('subject') }}">
+                                                            class="custom-form-input" placeholder="subject"
+                                                            value="{{ old('subject') }}">
                                                         @error('subject')
                                                             <div class="alert alert-danger error" style="color:red">
                                                                 {{ $message }}</div>
@@ -275,20 +292,23 @@
                                                     </div>
                                                     <div class="custom-form-group">
                                                         <label for="message" class="custom-form-label">Message</label>
-                                                        <textarea id="message" name="message" maxlength="255" class="custom-form-textarea" placeholder="Your message"
-                                                            >{{old('message') }}</textarea>
+                                                        <textarea id="message" name="message" maxlength="255" class="custom-form-textarea" placeholder="Your message">{{ old('message') }}</textarea>
                                                         @error('message')
                                                             <div class="alert alert-danger error" style="color:red">
                                                                 {{ $message }}</div>
                                                         @enderror
                                                     </div>
                                                     <div class="custom-form-group">
-                                                        {!! NoCaptcha::renderJs() !!}
-                                                        {!! NoCaptcha::display() !!}
-                                                        @error('g-recaptcha-response')
-                                                            <div class="alert alert-danger error" style="color:red">
-                                                                {{ $message }}</div>
-                                                        @enderror
+                                                        <div class="recaptcha-container">
+
+                                                            {!! NoCaptcha::renderJs() !!}
+                                                            {!! NoCaptcha::display() !!}
+                                                            @error('g-recaptcha-response')
+                                                                <div class="alert alert-danger error" style="color:red">
+                                                                    {{ $message }}</div>
+                                                            @enderror
+                                                        </div>
+
                                                     </div>
                                                     <button type="submit"
                                                         class="coh-link coh_buttons_item     coh-style-link-button-color    ssa-instance-cd9e8472546c9656ad630da5cc48b3fb coh-ce-cpt_link-5dc08d081 coh-ce-cpt_link-5dc08d08">Send
