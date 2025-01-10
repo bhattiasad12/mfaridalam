@@ -17,7 +17,7 @@
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <a href="#" class="d-lg-none">
-                <img alt="Logo" src="{{ asset('theme/assets/media/logos/default-small.svg') }}" class="h-30px" />
+                <img alt="Logo" src="{{ asset('assets/images/cropped-Muhammad-3-1_inverted.avif') }}" class="h-30px" />
             </a>
         </div>
         <!--end::Mobile logo-->
