@@ -38,11 +38,22 @@ Route::middleware('auth')->group(function () {
     Route::resource('interviews', InterviewController::class);
     Route::resource('events', EventController::class);
     Route::resource('contact', ContactController::class)->except(['store']);
-    
+
     Route::get('/articles/{id}/download', [ArticleController::class, 'download'])->name('articles.download');
     Route::get('/reports/{id}/download', [ReportController::class, 'download'])->name('reports.download');
     Route::get('/presentations/{id}/download', [PresentationController::class, 'download'])->name('presentations.download');
     Route::get('/news/{id}/download', [NewsController::class, 'download'])->name('news.download');
+});
+
+Route::get('/test-mail', function () {
+    try {
+        \Illuminate\Support\Facades\Mail::raw('This is a test email.', function ($message) {
+            $message->to('bhattiasad12@gmail.com')->subject('Test Email');
+        });
+        return 'Email sent successfully!';
+    } catch (\Exception $e) {
+        return 'Failed to send email: ' . $e->getMessage();
+    }
 });
 
 
