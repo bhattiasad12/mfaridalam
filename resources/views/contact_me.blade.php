@@ -128,7 +128,7 @@
 
                 .custom-contact-column,
                 .custom-form-column {
-                    width: 80%;
+                    width: 100%;
                     margin-bottom: 30px;
                 }
             }
