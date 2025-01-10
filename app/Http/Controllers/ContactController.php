@@ -48,7 +48,7 @@ class ContactController extends Controller
             'message' => $request->message,
         ]);
         // Send an email
-        Mail::to('bhattiasad12@gmail.com')->send(new ContactFormMail($request->all()));
+        Mail::to('farid.alam@akdsl.com')->send(new ContactFormMail($request->all()));
         // Mail::send('vendor.mail.html.default', $data, function($message) use($data) {
         //     $message->to('bhattiasad12@gmail.com', 'Asad Bhatti');
         //     $message->subject('New email!!!');
