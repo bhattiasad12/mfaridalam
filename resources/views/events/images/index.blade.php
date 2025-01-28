@@ -7,7 +7,7 @@
         <div class="mb-3">
             <button onclick="create('images/create', 'Add Images')"
                 class="btn btn-sm btn-light-primary" data-kt-drawer-show="true"
-                data-kt-drawer-target="#kt_drawer_example_permanent"><i class="ki-duotone ki-plus fs-2"></i>New Event</button>
+                data-kt-drawer-target="#kt_drawer_example_permanent"><i class="ki-duotone ki-plus fs-2"></i>Add Images</button>
         </div>
 
         <div class="row">
