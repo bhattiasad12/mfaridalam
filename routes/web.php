@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventImagesController;
 use App\Http\Controllers\InterviewController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PresentationController;
@@ -43,6 +44,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/reports/{id}/download', [ReportController::class, 'download'])->name('reports.download');
     Route::get('/presentations/{id}/download', [PresentationController::class, 'download'])->name('presentations.download');
     Route::get('/news/{id}/download', [NewsController::class, 'download'])->name('news.download');
+
+    Route::prefix('events/{event}/images')->name('events.images.')->group(function () {
+        Route::get('/', [EventImagesController::class, 'index'])->name('index');
+        Route::get('/create', [EventImagesController::class, 'create'])->name('create');
+        Route::post('/store', [EventImagesController::class, 'store'])->name('store');
+        Route::delete('/{image}', [EventImagesController::class, 'destroy'])->name('destroy');
+    });
 });
 
 Route::get('/test-mail', function () {
