@@ -18,6 +18,8 @@ class EventController extends Controller
      */
     public function index()
     {
+        phpinfo();
+
         $pageName = '';
         $data = Event::orderBy('id', 'desc')->paginate(10);
 
@@ -35,7 +37,6 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
-        phpinfo();
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
