@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Visit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
@@ -40,52 +41,63 @@ class EventController extends Controller
             'file.*' => 'required|image|mimes:jpg,jpeg,png|max:20048',
         ]);
 
-        // Create the event
-        $event = Event::create([
-            'name' => $request->name,
-            'description' => $request->description,
-        ]);
+        // Use a transaction to ensure atomicity
+        DB::beginTransaction();
 
-        // Create a unique folder name based on event name and timestamp
-        $folderName = 'uploads/events/' . Str::slug($request->name) . '_' . time(); // Unique folder name
-        $directory = public_path($folderName); // Full directory path
+        try {
+            // Create the event
+            $event = Event::create([
+                'name' => $request->name,
+                'description' => $request->description,
+            ]);
 
-        // Ensure the directory exists
-        if (!File::exists($directory)) {
-            File::makeDirectory($directory, 0755, true);
-        }
+            // Create a unique folder name based on event name and timestamp
+            $folderName = 'uploads/events/' . Str::slug($request->name) . '_' . time();
+            $directory = public_path($folderName);
 
-        if ($request->hasFile('file')) {
-            foreach ($request->file('file') as $image) {
-                // Get the original file name
-                $originalFileName = $image->getClientOriginalName();
-
-                $shortenedName = strlen($originalFileName) > 30
-                    ? substr($originalFileName, 0, 10) . '...' . substr($originalFileName, -10)
-                    : $originalFileName;
-
-                // Ensure unique file name
-                $originalFileName = time() . '-' . $shortenedName;
-
-                // Store the file in the unique folder
-                $image->move($directory, $originalFileName);
-
-                // Store the relative path in the database
-                $relativePath = $folderName . '/' . $originalFileName;
-
-                // Save image details in the event_images table
-                $event->images()->create([
-                    'image_name' => $originalFileName,
-                    'image_path' => $relativePath, // Save relative path
-                ]);
+            // Ensure the directory exists
+            if (!File::exists($directory)) {
+                File::makeDirectory($directory, 0755, true);
             }
-        }
 
-        return response()->json([
-            'message' => 'Event created successfully!',
-            'event' => $event,
-        ]);
+            // Process the files if uploaded
+            if ($request->hasFile('file')) {
+                foreach ($request->file('file') as $image) {
+                    // Generate a completely unique file name using a UUID
+                    $uniqueFileName = uniqid() . '.' . $image->getClientOriginalExtension();
+
+                    // Store the file in the unique folder
+                    $image->move($directory, $uniqueFileName);
+
+                    // Store the relative path in the database
+                    $relativePath = $folderName . '/' . $uniqueFileName;
+
+                    // Save image details in the event_images table
+                    $event->images()->create([
+                        'image_name' => $uniqueFileName,
+                        'image_path' => $relativePath,
+                    ]);
+                }
+            }
+
+            // Commit the transaction
+            DB::commit();
+
+            return response()->json([
+                'message' => 'Event created successfully!',
+                'event' => $event,
+            ]);
+        } catch (\Exception $e) {
+            // Rollback the transaction in case of an error
+            DB::rollBack();
+
+            return response()->json([
+                'message' => 'An error occurred while creating the event.',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
     }
+
 
 
     public function show(Event $event)
