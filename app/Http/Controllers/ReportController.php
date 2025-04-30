@@ -35,7 +35,7 @@ class ReportController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:10048',
+            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:15000',
         ]);
 
         $folderName = 'uploads/reports/' . Str::slug($request->name) . '_' . time();
