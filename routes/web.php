@@ -26,7 +26,7 @@ Route::get('/getpresentations', [PresentationController::class, 'getPresentation
 Route::get('/getnews', [NewsController::class, 'getNews'])->middleware(GetVisitCount::class)->name('getNews');
 Route::get('/getevents', [EventController::class, 'getEvents'])->middleware(GetVisitCount::class)->name('getEvents');
 Route::get('/getevent-detail', [EventController::class, 'eventDetail'])->middleware(GetVisitCount::class)->name('eventDetail');
-Route::get('/getinterviews', [InterviewController::class, 'getInterviews'])->middleware(GetVisitCount::class)->middleware(GetVisitCount::class)->name('getInterviews');
+Route::get('/getVideo-library', [InterviewController::class, 'getInterviews'])->middleware(GetVisitCount::class)->middleware(GetVisitCount::class)->name('getVideo-library');
 Route::get('/getabout-me', [WelcomeController::class, 'getAboutMe'])->middleware(GetVisitCount::class)->name('getAboutMe');
 Route::get('/getcontact-me', [WelcomeController::class, 'getContactMe'])->middleware(GetVisitCount::class)->name('getContactMe');
 Route::post('contact', [ContactController::class, 'store'])->name('contact.store');

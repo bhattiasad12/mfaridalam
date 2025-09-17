@@ -93,7 +93,7 @@ class InterviewController extends Controller
             ]);
         }
 
-        $pageName = 'Interviews';
+        $pageName = 'Video Library';
         return view('interviews', compact('pageName', 'data'));
     }
 }

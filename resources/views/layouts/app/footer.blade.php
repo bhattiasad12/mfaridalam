@@ -42,7 +42,7 @@
                             </div> --}}
                             <ul class="footer__navigation-group-items">
                                 <li class="footer__navigation-group-item">
-                                    <a href="{{route('getInterviews')}}" class="footer__link"
+                                    <a href="{{route('getVideo-library')}}" class="footer__link"
                                         data-drupal-link-system-path="node/1816">Interviews</a>
                                 </li>
                                 <li class="footer__navigation-group-item">
